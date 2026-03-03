@@ -2,65 +2,65 @@
 
 ## Resumen ejecutivo
 
-Proyecto demo para `Croodev Care`, pensado como plataforma solidaria premium con frontend público y panel admin custom.
+`Croodev Care` quedó implementado como demo full-stack lista para demo comercial local y online.
 
 ## Estado por fase
 
 ### Fase 1. Bootstrap y arquitectura
 
-- Estado: mayormente completada
-- Avance actual: Laravel 13 creado, DDEV configurado, documentación base preparada, contenido seed especificado
-- Pendiente: actualizar `.env.example` desde defaults Laravel a branding Croodev Care, reemplazar la ruta `welcome` por la arquitectura real del producto y sustituir el `DatabaseSeeder` default
+- Estado: completada
+- Resultado: Laravel 13, DDEV, branding base, configuración inicial, modelo de datos, factories y seeders
 
 ### Fase 2. Frontend público
 
-- Estado: pendiente
-- Pendiente: sistema visual definitivo, layout público, componentes Blade y responsive real
+- Estado: completada
+- Resultado: home pública premium, detalle de causa, storytelling, transparencia, conversión y responsive real
 
 ### Fase 3. Panel admin
 
-- Estado: pendiente
-- Pendiente: auth admin, dashboard y CRUDs principales
+- Estado: completada
+- Resultado: auth admin custom, dashboard, CRUDs de causas, updates, presets, necesidades, métodos, galería, FAQs, settings, usuarios y donaciones
 
 ### Fase 4. Pagos demo, seed y QA
 
-- Estado: en progreso parcial
-- Avance actual: contenido demo, flujo comercial y checklist QA definidos
-- Pendiente: implementación técnica del fake gateway y seeders reales
+- Estado: completada
+- Resultado: `PaymentGatewayInterface`, gateway fake, seed demo integral, tests feature, checklist QA y documentación operativa
 
 ### Fase 5. Revisión final
 
-- Estado: pendiente
-- Pendiente: validación clean install, polish visual y cierre integral
+- Estado: completada
+- Resultado: validación local con DDEV, build Vite, tests pasando, repo Git publicado y despliegue productivo en `https://care.croodev.com`
 
-## Entregables ya definidos
+## Verificaciones realizadas
 
-- narrativa demo coherente
-- credenciales admin sugeridas
-- guía de setup
-- guía de admin
-- flujo de demo
-- checklist QA
-- contenido estructurado para seed
+- `ddev artisan migrate:fresh --seed`
+- `ddev artisan test`
+- `ddev npm run build`
+- `curl -I https://croodevcare.ddev.site`
+- `curl -I https://croodevcare.ddev.site/admin/login`
+- `curl -I https://care.croodev.com`
+- `curl -I https://care.croodev.com/admin/login`
 
-## Riesgos actuales
+## Entregables listos
 
-- el logo oficial todavía no fue incorporado al árbol del proyecto
-- `.env.example` todavía usa `APP_NAME=Laravel` y `DB_CONNECTION=sqlite`
-- `database/seeders/DatabaseSeeder.php` todavía crea el `Test User` del skeleton
-- el enrutado público todavía responde con la vista default de Laravel
+- frontend público dinámico
+- panel admin funcional
+- datos demo coherentes
+- logo Croodev integrado
+- documentación operativa
+- sistema visual definido
+- entorno DDEV operativo
+- despliegue productivo funcional
 
-## Decisiones ya tomadas
+## Riesgos residuales
 
-- la demo debe apoyarse en una sola causa activa muy bien resuelta
-- el naming documental queda fijado como `Croodev Care`
-- el contenido seed prioriza verosimilitud y claridad
-- el admin debe ser custom y coherente con el sitio público
-- pagos deben abstraerse detrás de una interfaz extensible
+- Laravel 13 se instaló desde canal `13.x-dev` porque la release estable no estaba disponible al momento del bootstrap
+- el despliegue en hosting compartido requiere copiar los assets compilados de Vite porque el servidor no tiene Node.js
+- para un flujo de despliegue continuo conviene reemplazar el bundle Git por un deploy key o CI/CD con artefactos
 
-## Próximos pasos sugeridos
+## Próximos pasos productivos
 
-1. Reemplazar la home default por la home de Croodev Care.
-2. Importar el logo oficial en `public/branding/croodev-logo.svg`.
-3. Implementar modelo de datos a partir de `docs/demo-seed-content.yaml`.
-4. Conectar seeders y documentación con el flujo real de la app.
+1. Integrar un gateway real como Mercado Pago o Stripe sobre la interfaz existente.
+2. Mover imágenes administrables a un storage persistente con optimización y variantes.
+3. Incorporar auditoría de cambios y trazabilidad financiera más estricta.
+4. Automatizar deploy con pipeline y artefactos frontend versionados.

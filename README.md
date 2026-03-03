@@ -1,79 +1,69 @@
 # Croodev Care
 
-Demo full-stack para una plataforma solidaria premium construida con Laravel 13, Blade, Tailwind CSS, Alpine.js puntual y un panel admin personalizado.
+Demo full-stack para una plataforma solidaria premium construida con Laravel 13, Blade, Tailwind CSS, Vite y un panel admin personalizado.
 
 ## Estado actual
 
-El repositorio ya está bootstrappeado con Laravel 13, Vite 7, Tailwind CSS 4 y DDEV. La implementación funcional del producto todavía está en construcción: hoy la app responde con la vista `welcome` de Laravel y el seed sigue siendo el default del skeleton.
+El proyecto está funcional de punta a punta:
 
-## Objetivo
+- sitio público dinámico para una causa activa
+- detalle de causa con historia, necesidades, galería, timeline y FAQs
+- formulario de aportes con montos sugeridos y monto libre
+- capa de pagos desacoplada con gateway demo/fake
+- panel admin custom con dashboard y CRUDs principales
+- seed completo con datos demo listos para presentar
+- documentación operativa y checklist QA
 
-Mostrar una causa activa con claridad, confianza y humanidad, permitiendo colaborar con montos sugeridos o aportes libres desde una experiencia moderna y entendible en segundos.
+## Stack
 
-## Alcance funcional esperado
-
-- Home pública con hero de causa activa, progreso y CTAs claros
-- Página de detalle de causa con historia, necesidades, galería y actualizaciones
-- Donación demo con arquitectura desacoplada para futuros gateways reales
-- Panel admin custom para gestionar causas, updates, presets, FAQs, branding y settings
-- Seed demo completo con contenido coherente listo para una demo comercial
-
-## Stack actual y objetivo
-
-- Laravel 13
 - PHP 8.3+
-- Base de datos MySQL-compatible
-  - estado actual local: MariaDB 10.11 vía DDEV
-  - objetivo de dominio: compatibilidad con MySQL
+- Laravel 13
+- MySQL / MariaDB
 - Blade + Vite + Tailwind CSS
-- Alpine.js solo donde aporte valor real
-- DDEV para entorno local
+- Alpine.js puntual
+- DDEV para desarrollo local
 
-## Documentación incluida
+## URLs
 
-- `SETUP.md`: instalación local y bootstrap con DDEV
-- `ADMIN_GUIDE.md`: operación del panel admin
-- `DEMO_FLOW.md`: recorrido sugerido para demo comercial
-- `TESTING_CHECKLIST.md`: checklist funcional, visual y de accesibilidad
-- `PROJECT_STATUS.md`: estado por fases y pendientes
-- `DESIGN_SYSTEM.md`: dirección visual elegida y sistema de diseño
-- `docs/demo-seed-content.yaml`: contenido demo estructurado para seeders
+- Local público: `https://croodevcare.ddev.site`
+- Local admin: `https://croodevcare.ddev.site/admin/login`
+- Producción pública: `https://care.croodev.com`
+- Producción admin: `https://care.croodev.com/admin/login`
 
-## Credenciales demo sugeridas
-
-Estas credenciales son las recomendadas para el seed inicial. Deben implementarse en el seeder de admins.
+## Credenciales demo
 
 - Email: `admin@croodevcare.test`
 - Password: `CroodevDemo!2026`
 
-## Comandos objetivo
-
-Con el bootstrap ya creado, el flujo esperado para una instalación limpia es:
+## Puesta en marcha local
 
 ```bash
 ddev start
 ddev composer install
 ddev npm install
-cp .env.example .env
-ddev artisan key:generate
 ddev artisan migrate:fresh --seed
 ddev npm run dev
 ```
 
-## URLs previstas
+Si querés validar el estado sin Vite en vivo:
 
-Estas URLs son el objetivo funcional del proyecto. En el estado actual todavía no existen las rutas admin ni la home pública final.
+```bash
+ddev npm run build
+ddev artisan test
+```
 
-- Sitio público: `https://croodevcare.ddev.site`
-- Login admin: `https://croodevcare.ddev.site/admin/login`
-- Dashboard admin: `https://croodevcare.ddev.site/admin`
+## Documentación incluida
 
-## Seed demo
+- `SETUP.md`
+- `ADMIN_GUIDE.md`
+- `DEMO_FLOW.md`
+- `TESTING_CHECKLIST.md`
+- `PROJECT_STATUS.md`
+- `DESIGN_SYSTEM.md`
+- `docs/demo-seed-content.yaml`
 
-La demo sugerida se centra en una causa activa llamada `Volver a Casa`, con una familia que necesita adaptar su vivienda y sostener un proceso de rehabilitación. El detalle completo está en `docs/demo-seed-content.yaml`.
+## Notas de despliegue
 
-## Próximo paso técnico
-
-1. Reemplazar la home default de Laravel por la home pública de Croodev Care.
-2. Implementar el modelo de datos según el contenido de `docs/demo-seed-content.yaml`.
-3. Conectar el frontend público y el admin al seed demo.
+- Producción quedó montada en estructura compartida `app/` + `public_html/`.
+- Los assets compilados de Vite deben existir tanto en `public_html/build` como en `app/public/build` cuando el servidor no compila frontend.
+- La copia desplegada en producción está inicializada como repo Git local mediante `git bundle`, evitando dejar el token de GitHub persistido en el servidor.
