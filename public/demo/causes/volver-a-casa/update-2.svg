@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" fill="none">
+  <rect width="1200" height="900" fill="#FFFDFC"/>
+  <rect x="140" y="150" width="920" height="620" rx="40" fill="#F3EEE6"/>
+  <rect x="220" y="220" width="320" height="430" rx="30" fill="#C9825B"/>
+  <rect x="580" y="220" width="360" height="170" rx="30" fill="#DDE6DE"/>
+  <rect x="580" y="420" width="360" height="230" rx="30" fill="#285446"/>
+  <text x="580" y="322" fill="#171717" font-family="Cormorant Garamond, serif" font-size="54">Primeros cambios en dormitorio</text>
+  <text x="580" y="710" fill="#6D6A64" font-family="Manrope, sans-serif" font-size="24">Progreso tangible, simple y entendible</text>
+</svg>

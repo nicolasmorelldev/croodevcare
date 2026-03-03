@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" fill="none">
+  <rect width="1200" height="900" fill="#F6F1E8"/>
+  <rect x="100" y="180" width="1000" height="540" rx="36" fill="#FFFDFC"/>
+  <rect x="180" y="420" width="620" height="180" rx="32" fill="#285446"/>
+  <rect x="250" y="330" width="460" height="120" rx="28" fill="#DDE6DE"/>
+  <circle cx="320" cy="640" r="68" fill="#171717"/>
+  <circle cx="700" cy="640" r="68" fill="#171717"/>
+  <path d="M850 320C922 320 980 376 980 448V600H820V350C820 333 833 320 850 320Z" fill="#C9825B"/>
+  <rect x="845" y="360" width="110" height="84" rx="20" fill="#F6F1E8"/>
+  <text x="180" y="280" fill="#171717" font-family="Cormorant Garamond, serif" font-size="62">Traslados a rehabilitacion</text>
+  <text x="180" y="760" fill="#6D6A64" font-family="Manrope, sans-serif" font-size="24">Movilidad constante para sostener el tratamiento</text>
+</svg>

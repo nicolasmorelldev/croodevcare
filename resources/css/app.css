@@ -1,0 +1,246 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+}
+
+:root {
+    --ink: #171717;
+    --graphite: #2b2f2d;
+    --paper: #fffdfc;
+    --ivory: #f6f1e8;
+    --panel: #f3eee6;
+    --panel-strong: #ece4d8;
+    --line: #ddd6ca;
+    --forest: #285446;
+    --forest-deep: #17382f;
+    --sage: #dde6de;
+    --clay: #c9825b;
+    --gold-mist: #e9d8b4;
+    --muted: #6d6a64;
+    --success: #2f6a51;
+    --warning: #b9853b;
+    --danger: #a94a3b;
+    --info: #4d6b7a;
+    --shadow-soft: 0 12px 30px rgba(23, 23, 23, 0.06);
+    --shadow-card: 0 18px 45px rgba(23, 23, 23, 0.08);
+    --shadow-float: 0 30px 70px rgba(23, 23, 23, 0.12);
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply min-h-screen bg-[var(--paper)] font-sans text-[var(--ink)] antialiased;
+        background-image:
+            radial-gradient(circle at top right, rgba(233, 216, 180, 0.28), transparent 22rem),
+            radial-gradient(circle at top left, rgba(221, 230, 222, 0.34), transparent 24rem);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        @apply font-medium tracking-[-0.03em] text-[var(--graphite)];
+    }
+
+    ::selection {
+        background: rgba(40, 84, 70, 0.18);
+    }
+
+    a,
+    button,
+    input,
+    textarea,
+    select {
+        @apply transition duration-200;
+    }
+}
+
+@layer components {
+    .site-container {
+        @apply mx-auto w-full max-w-[1240px] px-5 sm:px-6 lg:px-8;
+    }
+
+    .reading-container {
+        @apply mx-auto w-full max-w-[760px];
+    }
+
+    .section-block {
+        @apply py-16 lg:py-24;
+    }
+
+    .section-label {
+        @apply mb-4 inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white/80 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--forest)];
+    }
+
+    .section-title {
+        @apply text-4xl md:text-5xl;
+        font-family: var(--font-display);
+    }
+
+    .section-copy {
+        @apply max-w-3xl text-base leading-8 text-[var(--muted)] md:text-lg;
+    }
+
+    .card-panel {
+        @apply rounded-[28px] border border-[var(--line)] bg-white/90 backdrop-blur-sm;
+        box-shadow: var(--shadow-card);
+    }
+
+    .card-panel-soft {
+        @apply rounded-[24px] border border-[var(--line)] bg-[var(--panel)]/75;
+        box-shadow: var(--shadow-soft);
+    }
+
+    .eyebrow {
+        @apply inline-flex items-center gap-2 rounded-full bg-[var(--forest)]/8 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--forest)];
+    }
+
+    .hero-title {
+        @apply max-w-3xl text-[44px] leading-[0.92] md:text-[64px];
+        font-family: var(--font-display);
+    }
+
+    .hero-copy {
+        @apply max-w-2xl text-base leading-8 text-[var(--muted)] md:text-lg;
+    }
+
+    .btn-primary {
+        @apply inline-flex items-center justify-center rounded-full border border-[var(--forest)] bg-[var(--forest)] px-6 py-3 text-sm font-semibold text-white shadow-[var(--shadow-soft)] hover:bg-[var(--forest-deep)];
+    }
+
+    .btn-secondary {
+        @apply inline-flex items-center justify-center rounded-full border border-[var(--line)] bg-white px-6 py-3 text-sm font-semibold text-[var(--ink)] hover:border-[var(--forest)] hover:text-[var(--forest)];
+    }
+
+    .btn-ghost {
+        @apply inline-flex items-center justify-center rounded-full border border-transparent px-4 py-2 text-sm font-semibold text-[var(--forest)] hover:bg-[var(--forest)]/6;
+    }
+
+    .stat-chip {
+        @apply inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm text-[var(--muted)];
+    }
+
+    .progress-track {
+        @apply h-3 overflow-hidden rounded-full bg-[var(--panel-strong)];
+    }
+
+    .progress-bar {
+        @apply h-full rounded-full bg-[linear-gradient(90deg,var(--forest),#3a7b66)];
+    }
+
+    .story-prose p {
+        @apply mb-5 text-base leading-8 text-[var(--muted)];
+    }
+
+    .input-field,
+    .textarea-field,
+    .select-field {
+        @apply w-full rounded-[18px] border border-[var(--line)] bg-white px-4 py-3 text-sm text-[var(--ink)] outline-none ring-0 placeholder:text-[var(--muted)] focus:border-[var(--forest)] focus:shadow-[0_0_0_4px_rgba(40,84,70,0.08)];
+    }
+
+    .textarea-field {
+        @apply min-h-[140px] resize-y;
+    }
+
+    .field-label {
+        @apply mb-2 block text-sm font-semibold text-[var(--graphite)];
+    }
+
+    .field-help {
+        @apply mt-2 text-xs leading-5 text-[var(--muted)];
+    }
+
+    .surface-badge {
+        @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold;
+    }
+
+    .surface-badge-success {
+        @apply bg-[var(--success)]/10 text-[var(--success)];
+    }
+
+    .surface-badge-warning {
+        @apply bg-[var(--warning)]/12 text-[var(--warning)];
+    }
+
+    .surface-badge-danger {
+        @apply bg-[var(--danger)]/10 text-[var(--danger)];
+    }
+
+    .surface-badge-info {
+        @apply bg-[var(--info)]/10 text-[var(--info)];
+    }
+
+    .public-grid {
+        @apply grid gap-6 lg:grid-cols-12;
+    }
+
+    .admin-shell {
+        @apply min-h-screen bg-[var(--ivory)];
+    }
+
+    .admin-card {
+        @apply rounded-[24px] border border-[var(--line)] bg-white;
+        box-shadow: var(--shadow-soft);
+    }
+
+    .admin-stat {
+        @apply rounded-[24px] border border-[var(--line)] bg-white p-6;
+        box-shadow: var(--shadow-soft);
+    }
+
+    .admin-title {
+        @apply text-3xl tracking-[-0.03em];
+        font-family: var(--font-display);
+    }
+
+    .admin-sidebar-link {
+        @apply flex items-center justify-between rounded-2xl px-4 py-3 text-sm font-medium text-[var(--muted)] hover:bg-white hover:text-[var(--forest)];
+    }
+
+    .admin-sidebar-link-active {
+        @apply bg-white text-[var(--forest)] shadow-[var(--shadow-soft)];
+    }
+
+    .admin-table {
+        @apply min-w-full divide-y divide-[var(--line)] text-sm;
+    }
+
+    .admin-table th {
+        @apply px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--muted)];
+    }
+
+    .admin-table td {
+        @apply px-4 py-4 align-top text-[var(--graphite)];
+    }
+
+    .empty-state {
+        @apply rounded-[24px] border border-dashed border-[var(--line)] bg-white/70 p-10 text-center text-sm text-[var(--muted)];
+    }
+
+    .donation-method-card {
+        @apply cursor-pointer rounded-[22px] border border-[var(--line)] bg-white p-4;
+    }
+
+    .donation-method-card:has(input:checked) {
+        @apply border-[var(--forest)] bg-[var(--forest)]/[0.04];
+        box-shadow: 0 0 0 4px rgba(40, 84, 70, 0.08);
+    }
+
+    .preset-chip {
+        @apply rounded-[20px] border border-[var(--line)] bg-white px-4 py-4 text-left;
+    }
+
+    .preset-chip-active {
+        @apply border-[var(--forest)] bg-[var(--forest)]/[0.06];
+    }
+}

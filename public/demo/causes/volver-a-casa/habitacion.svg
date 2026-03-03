@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" fill="none">
+  <rect width="1200" height="900" fill="#F3EEE6"/>
+  <rect x="90" y="90" width="1020" height="720" rx="36" fill="#FFFDFC"/>
+  <rect x="180" y="250" width="430" height="260" rx="26" fill="#DDE6DE"/>
+  <rect x="180" y="520" width="430" height="120" rx="20" fill="#ECE4D8"/>
+  <rect x="680" y="180" width="210" height="430" rx="26" fill="#285446"/>
+  <rect x="916" y="220" width="120" height="320" rx="20" fill="#C9825B"/>
+  <path d="M170 700H1030" stroke="#DDD6CA" stroke-width="22" stroke-linecap="round"/>
+  <text x="180" y="170" fill="#171717" font-family="Cormorant Garamond, serif" font-size="64">Habitacion en adaptacion</text>
+  <text x="180" y="730" fill="#6D6A64" font-family="Manrope, sans-serif" font-size="24">Espacio seguro, circulacion y apoyo lateral</text>
+</svg>

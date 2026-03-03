@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" fill="none">
+  <rect width="1200" height="900" fill="#F6F1E8"/>
+  <circle cx="310" cy="230" r="140" fill="#DDE6DE"/>
+  <rect x="170" y="180" width="860" height="560" rx="40" fill="#FFFDFC"/>
+  <path d="M280 560C380 430 470 430 570 560" stroke="#285446" stroke-width="24" stroke-linecap="round"/>
+  <path d="M620 560C720 390 830 390 930 560" stroke="#C9825B" stroke-width="24" stroke-linecap="round"/>
+  <rect x="240" y="260" width="180" height="180" rx="30" fill="#285446"/>
+  <rect x="500" y="260" width="180" height="180" rx="30" fill="#E9D8B4"/>
+  <rect x="760" y="260" width="180" height="180" rx="30" fill="#DDE6DE"/>
+  <text x="220" y="810" fill="#171717" font-family="Cormorant Garamond, serif" font-size="56">Jornada de rehabilitacion</text>
+</svg>

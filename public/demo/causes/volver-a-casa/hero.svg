@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" fill="none">
+  <rect width="1600" height="1000" fill="#F6F1E8"/>
+  <circle cx="1260" cy="180" r="250" fill="#E9D8B4"/>
+  <circle cx="320" cy="820" r="220" fill="#DDE6DE"/>
+  <rect x="130" y="130" width="1340" height="740" rx="42" fill="#FFFFFF"/>
+  <rect x="210" y="210" width="620" height="580" rx="32" fill="#ECE4D8"/>
+  <rect x="880" y="210" width="470" height="270" rx="32" fill="#285446"/>
+  <rect x="880" y="520" width="470" height="270" rx="32" fill="#F3EEE6"/>
+  <path d="M420 696C530 640 570 470 692 426C786 392 884 420 966 490" stroke="#C9825B" stroke-width="24" stroke-linecap="round"/>
+  <circle cx="470" cy="430" r="88" fill="#285446"/>
+  <circle cx="612" cy="394" r="72" fill="#C9825B"/>
+  <circle cx="730" cy="468" r="62" fill="#E9D8B4"/>
+  <text x="930" y="308" fill="#FFFFFF" font-family="Manrope, sans-serif" font-size="34" font-weight="700">Volver a Casa</text>
+  <text x="930" y="356" fill="#FFFFFF" font-family="Manrope, sans-serif" font-size="22">Una escena editorial para el hero principal</text>
+  <text x="930" y="618" fill="#171717" font-family="Cormorant Garamond, serif" font-size="72">Croodev Care</text>
+  <text x="930" y="672" fill="#6D6A64" font-family="Manrope, sans-serif" font-size="24">Demo visual de causa activa</text>
+</svg>

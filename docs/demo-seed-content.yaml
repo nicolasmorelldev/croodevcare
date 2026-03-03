@@ -1,0 +1,207 @@
+site:
+  product_name: "Croodev Care"
+  product_tagline: "Ayuda clara para causas que importan"
+  concept_by_label: "Concept by Croodev"
+  locale: "es_AR"
+  currency: "ARS"
+  support_email: "hola@croodevcare.test"
+  support_phone: "+54 11 5555 0192"
+  whatsapp: "+54 9 11 5555 0192"
+  social_links:
+    instagram: "https://instagram.com/croodev"
+    linkedin: "https://linkedin.com/company/croodev"
+  transparency_notice: "La campaña es administrada por un equipo verificado. Cada aporte se asigna a necesidades visibles y el avance se actualiza desde el panel."
+  legal_notice: "Demo funcional con fines comerciales y de validación de producto. Los medios de pago activos en este entorno son simulados."
+
+admin_user:
+  name: "Croodev Demo Admin"
+  email: "admin@croodevcare.test"
+  password: "CroodevDemo!2026"
+  role: "super_admin"
+
+active_cause:
+  title: "Volver a Casa"
+  slug: "volver-a-casa"
+  beneficiary_name: "Familia Rojas"
+  beneficiary_summary: "Una familia necesita adaptar su vivienda y sostener el tratamiento de rehabilitación de su hijo luego de un accidente vial."
+  status: "active"
+  location: "San Luis, Argentina"
+  goal_amount: 18500000
+  raised_amount: 7425000
+  featured: true
+  hero_badge: "Causa activa"
+  hero_heading: "Una casa accesible para volver a empezar"
+  hero_excerpt: "Mateo tiene 9 años y atraviesa una rehabilitación intensa. La familia necesita adaptar el hogar, cubrir traslados y sostener estudios médicos clave durante los próximos meses."
+  short_story: "Después de un accidente vial, la rutina de la familia cambió por completo. Hoy el foco está en que Mateo pueda volver a su casa con movilidad segura, continuidad médica y estabilidad básica."
+  full_story: |
+    En octubre, Mateo sufrió un accidente que cambió por completo el día a día de su familia.
+
+    Desde entonces, la prioridad fue estabilizar su salud y comenzar un proceso de rehabilitación exigente, con traslados frecuentes, controles médicos y nuevas necesidades dentro del hogar.
+
+    La vivienda actual no está preparada para su movilidad. Hace falta adaptar accesos, reorganizar un espacio de descanso seguro y cubrir gastos que aparecieron de forma repentina: estudios médicos, medicación, insumos, alimentos y movilidad.
+
+    La campaña Volver a Casa busca dar una respuesta concreta y transparente. Cada necesidad visible en la plataforma tiene seguimiento, estado y actualización pública.
+
+    El objetivo no es solo reunir fondos, sino dar previsibilidad a una familia que necesita enfocarse en la recuperación de su hijo.
+  impact_statement: "Cada aporte acelera el regreso seguro al hogar y sostiene la rehabilitación de Mateo."
+  primary_cta_label: "Ayudar ahora"
+  secondary_cta_label: "Conocer la historia"
+  manager_name: "Equipo Croodev Care"
+  manager_role: "Administración de campaña"
+  manager_contact_email: "transparencia@croodevcare.test"
+  manager_contact_phone: "+54 11 5555 0192"
+  donation_disclaimer: "Las contribuciones visibles en esta demo son simuladas. La arquitectura está preparada para integrarse con medios de pago reales."
+  hero_image:
+    path: "demo/causes/volver-a-casa/hero.jpg"
+    alt: "La familia Rojas en el patio de su casa"
+  detail_images:
+    - path: "demo/causes/volver-a-casa/habitacion.jpg"
+      alt: "Habitación en proceso de adaptación"
+      caption: "El cuarto necesita circulación segura y apoyo lateral."
+    - path: "demo/causes/volver-a-casa/traslado.jpg"
+      alt: "Traslado a una sesión de rehabilitación"
+      caption: "Cada semana implica varios viajes al centro médico."
+    - path: "demo/causes/volver-a-casa/rehabilitacion.jpg"
+      alt: "Sesión de rehabilitación física"
+      caption: "La continuidad del tratamiento es una prioridad."
+
+donation_amount_presets:
+  - amount: 2000
+    label: "$2.000"
+    impact_copy: "Ayudás con medicación de apoyo"
+    sort_order: 1
+  - amount: 5000
+    label: "$5.000"
+    impact_copy: "Cubrís parte de un traslado"
+    sort_order: 2
+  - amount: 10000
+    label: "$10.000"
+    impact_copy: "Aportás a insumos semanales"
+    sort_order: 3
+  - amount: 20000
+    label: "$20.000"
+    impact_copy: "Impulsás una adaptación concreta del hogar"
+    sort_order: 4
+
+need_items:
+  - category: "medical_studies"
+    title: "Estudios de control"
+    description: "Resonancias, controles traumatológicos y evaluaciones funcionales."
+    estimated_amount: 3200000
+    covered_amount: 1250000
+    status: "partially_covered"
+    urgent: true
+    sort_order: 1
+  - category: "transport"
+    title: "Traslados a rehabilitación"
+    description: "Movilidad ida y vuelta tres veces por semana durante cuatro meses."
+    estimated_amount: 2800000
+    covered_amount: 980000
+    status: "partially_covered"
+    urgent: true
+    sort_order: 2
+  - category: "home_adaptation"
+    title: "Adaptación del hogar"
+    description: "Rampas, apoyos, redistribución del cuarto y accesibilidad básica."
+    estimated_amount: 6400000
+    covered_amount: 2200000
+    status: "partially_covered"
+    urgent: true
+    sort_order: 3
+  - category: "food"
+    title: "Alimentos y soporte cotidiano"
+    description: "Acompañamiento mensual para sostener la organización familiar."
+    estimated_amount: 1600000
+    covered_amount: 1600000
+    status: "completed"
+    urgent: false
+    sort_order: 4
+  - category: "rent"
+    title: "Mes de alquiler puente"
+    description: "Respiro financiero para enfocar recursos en la recuperación."
+    estimated_amount: 4500000
+    covered_amount: 1035000
+    status: "partially_covered"
+    urgent: false
+    sort_order: 5
+
+cause_updates:
+  - title: "Mateo comenzó una nueva etapa de rehabilitación"
+    type: "medical"
+    published_at: "2026-02-12 10:00:00"
+    excerpt: "Se confirmó un nuevo plan de trabajo físico y ocupacional para las próximas ocho semanas."
+    content: "El equipo médico ajustó la frecuencia de las sesiones y recomendó sostener los traslados tres veces por semana. Esto vuelve aún más importante asegurar movilidad y continuidad."
+    image_path: "demo/causes/volver-a-casa/update-1.jpg"
+  - title: "La familia ya inició la adaptación del dormitorio"
+    type: "progress"
+    published_at: "2026-02-21 16:30:00"
+    excerpt: "Se liberó espacio para circulación y se definieron cambios mínimos de seguridad."
+    content: "Con el primer tramo reunido se comenzó a reorganizar el dormitorio para mejorar el acceso, el descanso y la seguridad diaria."
+    image_path: "demo/causes/volver-a-casa/update-2.jpg"
+  - title: "Se cubrió por completo el primer bloque de alimentos"
+    type: "milestone"
+    published_at: "2026-02-27 12:00:00"
+    excerpt: "Una necesidad clave ya figura como completada dentro de la campaña."
+    content: "Gracias a los aportes recibidos se cubrió el primer bloque de alimentos y soporte básico, permitiendo concentrar el próximo objetivo en movilidad y adaptación del hogar."
+    image_path: "demo/causes/volver-a-casa/update-3.jpg"
+
+gallery:
+  - path: "demo/causes/volver-a-casa/gallery-1.jpg"
+    alt: "Entrada principal de la vivienda"
+    caption: "La entrada actual requiere una solución de acceso segura."
+    featured: true
+    sort_order: 1
+  - path: "demo/causes/volver-a-casa/gallery-2.jpg"
+    alt: "Materiales para una adaptación básica"
+    caption: "Se priorizan cambios simples pero de alto impacto."
+    featured: true
+    sort_order: 2
+  - path: "demo/causes/volver-a-casa/gallery-3.jpg"
+    alt: "Jornada de rehabilitación"
+    caption: "El tratamiento sostenido mejora autonomía y calidad de vida."
+    featured: false
+    sort_order: 3
+
+donation_methods:
+  - type: "fake_gateway"
+    title: "Pago demo"
+    description: "Gateway simulado para demostrar el flujo de aporte."
+    enabled: true
+    primary: true
+  - type: "bank_transfer"
+    title: "Transferencia / Alias"
+    description: "croodev.care.demo"
+    enabled: true
+    primary: false
+  - type: "contact"
+    title: "Alianzas y ayuda directa"
+    description: "contacto@croodevcare.test"
+    enabled: true
+    primary: false
+
+faqs:
+  - question: "¿Quién administra esta campaña?"
+    answer: "La campaña está administrada por un equipo verificado y cada actualización queda reflejada en el panel y en el sitio público."
+    sort_order: 1
+  - question: "¿Cómo se muestra el uso de los fondos?"
+    answer: "Las necesidades se publican con estado, monto estimado y cobertura parcial o total. Las actualizaciones permiten seguir el avance de la causa."
+    sort_order: 2
+  - question: "¿Puedo colaborar de otra forma además de donar?"
+    answer: "Sí. La plataforma contempla difusión, alianzas, ayuda logística y contacto directo para colaboraciones específicas."
+    sort_order: 3
+  - question: "¿La demo usa pagos reales?"
+    answer: "No. Esta demo utiliza un gateway fake para validar experiencia y arquitectura. El sistema está preparado para integrar Stripe, Mercado Pago o transferencia real."
+    sort_order: 4
+
+testimonials:
+  - author: "Luciana R."
+    role: "Tía de Mateo"
+    message: "La claridad con la que se muestra cada avance nos ayuda a pedir apoyo con respeto y sin confusión."
+  - author: "Martín S."
+    role: "Kinesiólogo"
+    message: "Sostener el tratamiento sin interrupciones hace una diferencia real. Poder comunicar eso con transparencia es clave."
+
+content_blocks:
+  how_to_help_intro: "Hay distintas maneras de acompañar. Algunas resuelven urgencias inmediatas y otras sostienen el proceso completo."
+  transparency_intro: "Toda campaña necesita claridad operativa. Acá se muestra qué se necesita, cuánto se cubrió y cómo evoluciona la causa."
+  footer_blurb: "Croodev Care es una demo de producto para causas solidarias con identidad clara, experiencia cuidada y administración real."
