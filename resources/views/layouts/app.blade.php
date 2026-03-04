@@ -105,12 +105,12 @@
                     <p class="text-sm leading-7 text-[var(--muted)]">
                         {{ $siteSettings['legal_notice'] ?? 'Demo funcional con fines comerciales y de validación de producto.' }}
                     </p>
-                    <div class="pt-4">
-                        <div class="flex items-center gap-3 whitespace-nowrap text-xs font-semibold uppercase tracking-[0.2em] text-[var(--ink)]">
-                            <span>{{ $siteSettings['concept_by_label'] ?? config('croodev.site.concept_label') }}</span>
-                            <img src="{{ asset('branding/croodev-logo.svg') }}" alt="Croodev" class="h-5 w-auto shrink-0">
-                        </div>
-                    </div>
+                </div>
+            </div>
+            <div class="mt-10 w-full border-t border-[var(--line)] pt-6">
+                <div class="flex items-center gap-3 whitespace-nowrap text-xs font-semibold uppercase tracking-[0.2em] text-[var(--ink)]" style="display:flex;flex-wrap:nowrap;align-content:center;align-items:center;">
+                    <span style="display:block;height:12px;">{{ $siteSettings['concept_by_label'] ?? config('croodev.site.concept_label') }}</span>
+                    <img src="{{ asset('branding/croodev-logo.svg') }}" alt="Croodev" class="w-auto shrink-0" style="height:56px;">
                 </div>
             </div>
         </footer>
