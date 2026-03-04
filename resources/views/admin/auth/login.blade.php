@@ -13,11 +13,8 @@
             <section class="card-panel overflow-hidden">
                 <div class="h-full bg-[linear-gradient(135deg,rgba(29,94,184,0.98),rgba(217,31,53,0.92))] p-8 text-white lg:p-12">
                     @include('partials.campaign-lockup', [
-                        'tagline' => 'Acceso administrativo',
                         'wrapperClass' => 'campaign-lockup items-center',
-                        'iconClass' => 'campaign-mark h-14',
-                        'nameClass' => 'campaign-wordmark text-[3.15rem] text-white',
-                        'taglineClass' => 'campaign-tagline text-white/75',
+                        'logoClass' => 'campaign-logo-image h-14',
                     ])
                     <h1 class="mt-4 text-5xl leading-none" style="font-family: var(--font-display);">Panel de administración</h1>
                     <p class="mt-6 max-w-md text-base leading-8 text-white/78">

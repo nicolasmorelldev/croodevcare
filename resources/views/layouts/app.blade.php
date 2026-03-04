@@ -27,9 +27,7 @@
                     <a href="{{ route('home') }}" class="min-w-0">
                         @include('partials.campaign-lockup', [
                             'productName' => $productName,
-                            'tagline' => 'Campaña solidaria',
-                            'iconClass' => 'campaign-mark h-12 sm:h-14',
-                            'nameClass' => 'campaign-wordmark text-[2.4rem] sm:text-[3rem]',
+                            'logoClass' => 'campaign-logo-image h-12 sm:h-14',
                         ])
                     </a>
 
@@ -77,9 +75,7 @@
                 <div class="space-y-4">
                     @include('partials.campaign-lockup', [
                         'productName' => $productName,
-                        'tagline' => 'Recuperación, transparencia y apoyo directo',
-                        'iconClass' => 'campaign-mark h-14',
-                        'nameClass' => 'campaign-wordmark text-[2.8rem]',
+                        'logoClass' => 'campaign-logo-image h-14',
                     ])
                     <p class="max-w-md text-sm leading-7 text-[var(--muted)]">
                         {{ $contentBlocks['footer_blurb'] ?? 'Campaña digital pensada para centralizar avances, necesidades concretas y aportes de forma clara, humana y confiable.' }}

@@ -30,9 +30,7 @@
             <aside class="rounded-[32px] border border-[var(--line)] bg-[var(--panel)]/85 p-6">
                 <a href="{{ route('home') }}" class="mb-8 block">
                     @include('partials.campaign-lockup', [
-                        'tagline' => 'Panel de campaña',
-                        'iconClass' => 'campaign-mark h-12',
-                        'nameClass' => 'campaign-wordmark text-[2.55rem]',
+                        'logoClass' => 'campaign-logo-image h-12',
                     ])
                 </a>
 

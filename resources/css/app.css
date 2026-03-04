@@ -101,6 +101,10 @@
         @apply h-14 w-auto shrink-0 sm:h-16;
     }
 
+    .campaign-logo-image {
+        @apply h-14 w-auto shrink-0;
+    }
+
     .campaign-wordmark {
         @apply text-[2.75rem] leading-none text-[var(--ink)] sm:text-[3.4rem];
         font-family: var(--font-brand);
