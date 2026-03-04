@@ -71,46 +71,51 @@
         </main>
 
         <footer class="border-t border-[var(--line)] bg-[var(--ivory)]">
-            <div class="site-container grid gap-10 py-12 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.9fr]">
-                <div class="space-y-4">
-                    @include('partials.campaign-lockup', [
-                        'productName' => $productName,
-                        'logoClass' => 'campaign-logo-image h-14',
-                    ])
-                    <p class="max-w-md text-sm leading-7 text-[var(--muted)]">
-                        {{ $contentBlocks['footer_blurb'] ?? 'Campaña digital pensada para centralizar avances, necesidades concretas y aportes de forma clara, humana y confiable.' }}
-                    </p>
-                </div>
+            <div class="site-container py-12">
+                <div class="grid gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.9fr]">
+                    <div class="space-y-4">
+                        @include('partials.campaign-lockup', [
+                            'productName' => $productName,
+                            'logoClass' => 'campaign-logo-image h-14',
+                        ])
+                        <p class="max-w-md text-sm leading-7 text-[var(--muted)]">
+                            {{ $contentBlocks['footer_blurb'] ?? 'Campaña digital pensada para centralizar avances, necesidades concretas y aportes de forma clara, humana y confiable.' }}
+                        </p>
+                    </div>
 
-                <div>
-                    <p class="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-[var(--muted)]">Navegación</p>
-                    <div class="space-y-3 text-sm text-[var(--muted)]">
-                        @foreach ($navLinks as $link)
-                            <a href="{{ $link['href'] }}" class="block hover:text-[var(--forest)]">{{ $link['label'] }}</a>
-                        @endforeach
+                    <div>
+                        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-[var(--muted)]">Navegación</p>
+                        <div class="space-y-3 text-sm text-[var(--muted)]">
+                            @foreach ($navLinks as $link)
+                                <a href="{{ $link['href'] }}" class="block hover:text-[var(--forest)]">{{ $link['label'] }}</a>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-[var(--muted)]">Contacto</p>
+                        <div class="space-y-3 text-sm text-[var(--muted)]">
+                            <p>{{ $siteSettings['support_email'] ?? config('croodev.site.support_email') }}</p>
+                            <p>{{ $siteSettings['support_phone'] ?? config('croodev.site.support_phone') }}</p>
+                            <p>{{ $siteSettings['whatsapp'] ?? config('croodev.site.whatsapp') }}</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--muted)]">Transparencia</p>
+                        <p class="text-sm leading-7 text-[var(--muted)]">
+                            {{ $siteSettings['legal_notice'] ?? 'Demo funcional con fines comerciales y de validación de producto.' }}
+                        </p>
                     </div>
                 </div>
 
-                <div>
-                    <p class="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-[var(--muted)]">Contacto</p>
-                    <div class="space-y-3 text-sm text-[var(--muted)]">
-                        <p>{{ $siteSettings['support_email'] ?? config('croodev.site.support_email') }}</p>
-                        <p>{{ $siteSettings['support_phone'] ?? config('croodev.site.support_phone') }}</p>
-                        <p>{{ $siteSettings['whatsapp'] ?? config('croodev.site.whatsapp') }}</p>
+                <div class="concept-credit-wrap">
+                    <div class="concept-credit-row">
+                        <div class="concept-credit">
+                            <span class="concept-credit-label">{{ $siteSettings['concept_by_label'] ?? config('croodev.site.concept_label') }}</span>
+                            <img src="{{ asset('branding/croodev-logo.svg') }}" alt="Croodev" class="concept-credit-logo">
+                        </div>
                     </div>
-                </div>
-
-                <div class="space-y-3">
-                    <p class="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--muted)]">Transparencia</p>
-                    <p class="text-sm leading-7 text-[var(--muted)]">
-                        {{ $siteSettings['legal_notice'] ?? 'Demo funcional con fines comerciales y de validación de producto.' }}
-                    </p>
-                </div>
-            </div>
-            <div class="mt-10 w-full border-t border-[var(--line)] pt-6">
-                <div class="flex items-center gap-3 whitespace-nowrap text-xs font-semibold uppercase tracking-[0.2em] text-[var(--ink)]" style="display:flex;flex-wrap:nowrap;align-content:center;align-items:center;">
-                    <span style="display:block;height:12px;">{{ $siteSettings['concept_by_label'] ?? config('croodev.site.concept_label') }}</span>
-                    <img src="{{ asset('branding/croodev-logo.svg') }}" alt="Croodev" class="w-auto shrink-0" style="height:56px;">
                 </div>
             </div>
         </footer>

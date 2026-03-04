@@ -19,7 +19,7 @@ class CauseUpdateFactory extends Factory
             'type' => fake()->randomElement(CauseUpdateType::cases()),
             'excerpt' => fake()->sentence(),
             'content' => fake()->paragraphs(2, true),
-            'image_path' => 'demo/causes/sleider-calderon/update-1.jpg',
+            'image_path' => 'demo/causes/valentina-rojas/update-1.jpg',
             'published_at' => fake()->dateTimeBetween('-1 month'),
         ];
     }

@@ -3,7 +3,7 @@
 @endphp
 
 <div class="card-panel overflow-hidden" data-donation-widget>
-    <div class="border-b border-[var(--line)] bg-[var(--ivory)] px-6 py-5">
+    <div class="donation-widget-head border-b border-[var(--line)] px-6 py-5">
         <p class="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--muted)]">Aporte rápido</p>
         <h3 class="mt-2 text-3xl" style="font-family: var(--font-display);">Aportar ahora</h3>
         <p class="mt-2 text-sm leading-7 text-[var(--muted)]">

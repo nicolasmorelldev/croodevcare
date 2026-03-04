@@ -56,35 +56,35 @@ class DemoContentSeeder extends Seeder
         );
 
         $cause = Cause::query()->create([
-            'title' => 'Sleider Calderón',
-            'slug' => 'sleider-calderon',
-            'beneficiary_name' => 'Sleider Calderón',
-            'beneficiary_summary' => 'Sleider atraviesa una recuperación compleja después de un accidente vial. La campaña busca sostener terapias, movilidad diaria y adecuaciones básicas del hogar para que no interrumpa su proceso.',
+            'title' => 'Valentina Rojas',
+            'slug' => 'valentina-rojas',
+            'beneficiary_name' => 'Valentina Rojas',
+            'beneficiary_summary' => 'Valentina atraviesa una recuperación compleja después de un accidente vial. La campaña busca sostener terapias, movilidad diaria y adecuaciones básicas del hogar para que no interrumpa su proceso.',
             'status' => CauseStatus::Active,
             'location' => 'San Luis, Argentina',
             'goal_amount' => 18500000,
             'raised_amount' => 7425000,
             'featured' => true,
             'hero_badge' => 'Causa activa',
-            'hero_heading' => 'Una recuperación sostenida y un hogar seguro para Sleider',
-            'hero_excerpt' => 'Cada aporte ayuda a cubrir traslados, sesiones de rehabilitación, medicamentos y adecuaciones básicas para que Sleider continúe su recuperación con estabilidad y sin interrupciones.',
-            'short_story' => 'Después de un accidente de tránsito, la rutina de Sleider y de su familia cambió por completo. Hoy la prioridad es sostener su rehabilitación y preparar la casa para una nueva etapa de autonomía.',
+            'hero_heading' => 'Una recuperación sostenida y un hogar seguro para Valentina',
+            'hero_excerpt' => 'Cada aporte ayuda a cubrir traslados, sesiones de rehabilitación, medicamentos y adecuaciones básicas para que Valentina continúe su recuperación con estabilidad y sin interrupciones.',
+            'short_story' => 'Después de un accidente de tránsito, la rutina de Valentina y de su familia cambió por completo. Hoy la prioridad es sostener su rehabilitación y preparar la casa para una nueva etapa de autonomía.',
             'full_story' => implode("\n\n", [
-                'Sleider sufrió un accidente vial que obligó a reorganizar por completo su rutina, su tratamiento y la dinámica diaria de toda su familia.',
+                'Valentina sufrió un accidente vial que obligó a reorganizar por completo su rutina, su tratamiento y la dinámica diaria de toda su familia.',
                 'Desde entonces, el foco está puesto en sostener una rehabilitación exigente, con controles médicos, medicación, movilidad frecuente y asistencia para tareas básicas.',
                 'La vivienda todavía necesita ajustes concretos para que pueda moverse con mayor seguridad y descanso: accesos, circulación, apoyos y un espacio funcional para su recuperación.',
                 'Esta campaña reúne esas necesidades en un solo lugar, con seguimiento visible, actualizaciones públicas y un enfoque claro en la transparencia.',
-                'El objetivo es que Sleider pueda concentrarse en recuperar estabilidad, autonomía y calidad de vida sin que la familia cargue sola con todo el costo del proceso.',
+                'El objetivo es que Valentina pueda concentrarse en recuperar estabilidad, autonomía y calidad de vida sin que la familia cargue sola con todo el costo del proceso.',
             ]),
-            'impact_statement' => 'Cada aporte acerca a Sleider a una recuperación más estable, segura y autónoma.',
+            'impact_statement' => 'Cada aporte acerca a Valentina a una recuperación más estable, segura y autónoma.',
             'primary_cta_label' => 'Ayudar ahora',
             'secondary_cta_label' => 'Conocer la historia',
-            'manager_name' => 'Comité solidario de Sleider',
+            'manager_name' => 'Equipo de acompañamiento de Valentina',
             'manager_role' => 'Coordinación y seguimiento de la campaña',
-            'manager_contact_email' => 'transparencia@sleidercalderon.test',
+            'manager_contact_email' => 'transparencia.valentina@sleidercalderon.test',
             'manager_contact_phone' => '+54 11 5555 0192',
             'donation_disclaimer' => 'En esta demo el aporte se registra con un gateway de prueba. Las fotos utilizadas son referenciales y el sistema está preparado para integrarse con pagos reales.',
-            'hero_image_path' => 'demo/causes/sleider-calderon/hero.jpg',
+            'hero_image_path' => 'demo/causes/valentina-rojas/hero.jpg',
             'hero_image_alt' => 'Joven en silla de ruedas durante una jornada de recuperación',
             'published_at' => now()->subDays(20),
             'last_update_at' => '2026-02-27 12:00:00',
@@ -117,9 +117,9 @@ class DemoContentSeeder extends Seeder
         }
 
         foreach ([
-            ['title' => 'Sleider inició una nueva etapa de rehabilitación', 'type' => CauseUpdateType::Medical, 'published_at' => '2026-02-12 10:00:00', 'excerpt' => 'El equipo médico definió un esquema más intensivo para las próximas semanas.', 'content' => 'Los profesionales recomendaron sostener la continuidad de las sesiones y evitar interrupciones en traslados, controles y apoyo cotidiano. Eso vuelve prioritario asegurar movilidad y previsibilidad.', 'image_path' => 'demo/causes/sleider-calderon/update-1.jpg'],
-            ['title' => 'Comenzó la adecuación del espacio de descanso', 'type' => CauseUpdateType::Progress, 'published_at' => '2026-02-21 16:30:00', 'excerpt' => 'Se reorganizó una parte del hogar para mejorar circulación y seguridad.', 'content' => 'Con el primer tramo cubierto se inició una adaptación básica del espacio donde Sleider pasa más horas, priorizando accesos, apoyo físico y una rutina diaria más segura.', 'image_path' => 'demo/causes/sleider-calderon/update-2.jpg'],
-            ['title' => 'Se completó el primer bloque de apoyo diario', 'type' => CauseUpdateType::Milestone, 'published_at' => '2026-02-27 12:00:00', 'excerpt' => 'Una necesidad importante ya figura como cubierta dentro de la campaña.', 'content' => 'Los aportes recibidos permitieron cubrir el primer bloque de alimentos y soporte esencial. El siguiente foco está puesto en la terapia continua y la adecuación del hogar.', 'image_path' => 'demo/causes/sleider-calderon/update-3.jpg'],
+            ['title' => 'Valentina inició una nueva etapa de rehabilitación', 'type' => CauseUpdateType::Medical, 'published_at' => '2026-02-12 10:00:00', 'excerpt' => 'El equipo médico definió un esquema más intensivo para las próximas semanas.', 'content' => 'Los profesionales recomendaron sostener la continuidad de las sesiones y evitar interrupciones en traslados, controles y apoyo cotidiano. Eso vuelve prioritario asegurar movilidad y previsibilidad.', 'image_path' => 'demo/causes/valentina-rojas/update-1.jpg'],
+            ['title' => 'Comenzó la adecuación del espacio de descanso', 'type' => CauseUpdateType::Progress, 'published_at' => '2026-02-21 16:30:00', 'excerpt' => 'Se reorganizó una parte del hogar para mejorar circulación y seguridad.', 'content' => 'Con el primer tramo cubierto se inició una adaptación básica del espacio donde Valentina pasa más horas, priorizando accesos, apoyo físico y una rutina diaria más segura.', 'image_path' => 'demo/causes/valentina-rojas/update-2.jpg'],
+            ['title' => 'Se completó el primer bloque de apoyo diario', 'type' => CauseUpdateType::Milestone, 'published_at' => '2026-02-27 12:00:00', 'excerpt' => 'Una necesidad importante ya figura como cubierta dentro de la campaña.', 'content' => 'Los aportes recibidos permitieron cubrir el primer bloque de alimentos y soporte esencial. El siguiente foco está puesto en la terapia continua y la adecuación del hogar.', 'image_path' => 'demo/causes/valentina-rojas/update-3.jpg'],
         ] as $update) {
             CauseUpdate::query()->create([
                 'cause_id' => $cause->id,
@@ -128,12 +128,12 @@ class DemoContentSeeder extends Seeder
         }
 
         foreach ([
-            ['path' => 'demo/causes/sleider-calderon/story-1.jpg', 'alt' => 'Sleider en un entorno interior durante su recuperación', 'caption' => 'La campaña también busca adaptar su espacio cotidiano para que pueda moverse con seguridad.', 'featured' => true, 'sort_order' => 1],
-            ['path' => 'demo/causes/sleider-calderon/story-2.jpg', 'alt' => 'Acompañamiento durante una jornada de movilidad asistida', 'caption' => 'Cada traslado y cada instancia de apoyo marcan una diferencia real en el proceso.', 'featured' => true, 'sort_order' => 2],
-            ['path' => 'demo/causes/sleider-calderon/story-3.jpg', 'alt' => 'Momento de seguimiento médico en el proceso de recuperación', 'caption' => 'La continuidad clínica requiere tiempo, organización y recursos sostenidos.', 'featured' => false, 'sort_order' => 3],
-            ['path' => 'demo/causes/sleider-calderon/gallery-1.jpg', 'alt' => 'Movilidad urbana en silla de ruedas', 'caption' => 'La campaña prioriza autonomía, seguridad y accesibilidad en cada traslado.', 'featured' => true, 'sort_order' => 4],
-            ['path' => 'demo/causes/sleider-calderon/gallery-2.jpg', 'alt' => 'Rutina diaria adaptada con apoyo tecnológico', 'caption' => 'Recuperarse también implica reorganizar tareas y hábitos dentro del hogar.', 'featured' => true, 'sort_order' => 5],
-            ['path' => 'demo/causes/sleider-calderon/gallery-3.jpg', 'alt' => 'Espacio doméstico accesible para una nueva etapa', 'caption' => 'La meta es construir una rutina más estable, humana y sostenible para Sleider.', 'featured' => false, 'sort_order' => 6],
+            ['path' => 'demo/causes/valentina-rojas/story-1.jpg', 'alt' => 'Valentina en un entorno interior durante su recuperación', 'caption' => 'La campaña también busca adaptar su espacio cotidiano para que pueda moverse con seguridad.', 'featured' => true, 'sort_order' => 1],
+            ['path' => 'demo/causes/valentina-rojas/story-2.jpg', 'alt' => 'Acompañamiento durante una jornada de movilidad asistida', 'caption' => 'Cada traslado y cada instancia de apoyo marcan una diferencia real en el proceso.', 'featured' => true, 'sort_order' => 2],
+            ['path' => 'demo/causes/valentina-rojas/story-3.jpg', 'alt' => 'Momento de seguimiento médico en el proceso de recuperación', 'caption' => 'La continuidad clínica requiere tiempo, organización y recursos sostenidos.', 'featured' => false, 'sort_order' => 3],
+            ['path' => 'demo/causes/valentina-rojas/gallery-1.jpg', 'alt' => 'Movilidad urbana en silla de ruedas', 'caption' => 'La campaña prioriza autonomía, seguridad y accesibilidad en cada traslado.', 'featured' => true, 'sort_order' => 4],
+            ['path' => 'demo/causes/valentina-rojas/gallery-2.jpg', 'alt' => 'Rutina diaria adaptada con apoyo tecnológico', 'caption' => 'Recuperarse también implica reorganizar tareas y hábitos dentro del hogar.', 'featured' => true, 'sort_order' => 5],
+            ['path' => 'demo/causes/valentina-rojas/gallery-3.jpg', 'alt' => 'Espacio doméstico accesible para una nueva etapa', 'caption' => 'La meta es construir una rutina más estable, humana y sostenible para Valentina.', 'featured' => false, 'sort_order' => 6],
         ] as $image) {
             CauseImage::query()->create([
                 'cause_id' => $cause->id,
@@ -178,11 +178,11 @@ class DemoContentSeeder extends Seeder
         DonationMethod::query()->create([
             'type' => DonationMethodType::BankTransfer,
             'title' => 'Transferencia / Alias',
-            'description' => 'sleider.calderon.demo',
+            'description' => 'valentina.rojas.demo',
             'enabled' => true,
             'is_primary' => false,
             'sort_order' => 2,
-            'configuration' => ['alias' => 'sleider.calderon.demo'],
+            'configuration' => ['alias' => 'valentina.rojas.demo'],
         ]);
 
         DonationMethod::query()->create([

@@ -4,35 +4,37 @@
     $galleryImages = $cause->images->slice(3);
 @endphp
 
-<section class="section-block">
-    <div class="site-container public-grid items-start gap-y-8">
+<section class="hero-stage">
+    <div class="site-container public-grid items-center gap-y-10">
         <div class="lg:col-span-7">
-            <span class="eyebrow">{{ $cause->hero_badge ?? 'Causa activa' }}</span>
-            <h1 class="hero-title mt-6">{{ $cause->hero_heading ?: $cause->title }}</h1>
-            <p class="hero-copy mt-6">{{ $cause->hero_excerpt ?: $cause->beneficiary_summary }}</p>
+            <div class="hero-copy-panel">
+                <span class="eyebrow">{{ $cause->hero_badge ?? 'Causa activa' }}</span>
+                <h1 class="hero-title mt-6">{{ $cause->hero_heading ?: $cause->title }}</h1>
+                <p class="hero-copy mt-6">{{ $cause->hero_excerpt ?: $cause->beneficiary_summary }}</p>
 
-            <div class="mt-8 flex flex-wrap gap-3">
-                <span class="stat-chip">{{ $cause->beneficiary_name }}</span>
-                <span class="stat-chip">{{ $cause->location }}</span>
-                <span class="stat-chip">
-                    Última actualización
-                    {{ optional($cause->last_update_at ?? optional($cause->latestUpdate)->published_at)->format('d M Y') }}
-                </span>
-            </div>
+                <div class="mt-8 flex flex-wrap gap-3">
+                    <span class="stat-chip">{{ $cause->beneficiary_name }}</span>
+                    <span class="stat-chip">{{ $cause->location }}</span>
+                    <span class="stat-chip">
+                        Última actualización
+                        {{ optional($cause->last_update_at ?? optional($cause->latestUpdate)->published_at)->format('d M Y') }}
+                    </span>
+                </div>
 
-            <div class="mt-8 flex flex-wrap gap-4">
-                <a href="#donate" class="btn-primary">{{ $cause->primary_cta_label ?: 'Ayudar ahora' }}</a>
-                <a href="{{ request()->routeIs('home') ? route('causes.show', $cause) : '#story' }}" class="btn-secondary">
-                    {{ $cause->secondary_cta_label ?: 'Conocer la historia' }}
-                </a>
+                <div class="mt-8 flex flex-wrap gap-4">
+                    <a href="#donate" class="btn-primary">{{ $cause->primary_cta_label ?: 'Ayudar ahora' }}</a>
+                    <a href="{{ request()->routeIs('home') ? route('causes.show', $cause) : '#story' }}" class="btn-secondary">
+                        {{ $cause->secondary_cta_label ?: 'Conocer la historia' }}
+                    </a>
+                </div>
             </div>
         </div>
 
         <div class="lg:col-span-5">
-            <div class="relative overflow-hidden rounded-[32px] border border-[var(--line)] bg-[var(--panel)] p-4 shadow-[var(--shadow-float)]">
-                <img src="{{ asset($cause->hero_image_path) }}" alt="{{ $cause->hero_image_alt }}" class="h-[420px] w-full rounded-[26px] object-cover">
+            <div class="hero-media-shell">
+                <img src="{{ asset($cause->hero_image_path) }}" alt="{{ $cause->hero_image_alt }}" class="h-[460px] w-full rounded-[28px] object-cover lg:h-[520px]">
 
-                <div class="card-panel absolute bottom-8 left-8 right-8 p-5">
+                <div class="hero-progress-card">
                     <div class="flex items-end justify-between gap-4">
                         <div>
                             <p class="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--muted)]">Meta económica</p>
@@ -59,7 +61,7 @@
     </div>
 </section>
 
-<section id="story" class="section-block border-y border-[var(--line)] bg-[var(--ivory)]/75">
+<section id="story" class="section-block section-shell section-shell-story">
     <div class="site-container grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
         <div class="space-y-5">
             <span class="section-label">Historia y contexto</span>
@@ -92,7 +94,7 @@
     </div>
 </section>
 
-<section id="help" class="section-block">
+<section id="help" class="section-block section-shell section-shell-help">
     <div class="site-container">
         <span class="section-label">Cómo ayudar</span>
         <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
@@ -107,12 +109,12 @@
 
         <div class="mt-10 grid gap-6 lg:grid-cols-4">
             @foreach ([
-                ['title' => 'Aportes monetarios', 'copy' => 'Contribuciones simples con montos sugeridos o aporte libre.', 'tone' => 'surface-badge-success'],
-                ['title' => 'Difusión estratégica', 'copy' => 'Amplificar la causa en comunidades, empresas y redes afines.', 'tone' => 'surface-badge-info'],
-                ['title' => 'Alianzas y sponsors', 'copy' => 'Empresas o equipos que quieran cubrir una necesidad concreta.', 'tone' => 'surface-badge-warning'],
-                ['title' => 'Ayuda directa', 'copy' => 'Soporte logístico, movilidad o contacto especializado.', 'tone' => 'surface-badge-danger'],
+                ['title' => 'Aportes monetarios', 'copy' => 'Contribuciones simples con montos sugeridos o aporte libre.', 'tone' => 'surface-badge-success', 'panel' => 'help-card help-card-blue'],
+                ['title' => 'Difusión estratégica', 'copy' => 'Amplificar la causa en comunidades, empresas y redes afines.', 'tone' => 'surface-badge-info', 'panel' => 'help-card help-card-slate'],
+                ['title' => 'Alianzas y sponsors', 'copy' => 'Empresas o equipos que quieran cubrir una necesidad concreta.', 'tone' => 'surface-badge-warning', 'panel' => 'help-card help-card-gold'],
+                ['title' => 'Ayuda directa', 'copy' => 'Soporte logístico, movilidad o contacto especializado.', 'tone' => 'surface-badge-danger', 'panel' => 'help-card help-card-red'],
             ] as $card)
-                <article class="card-panel p-6">
+                <article class="card-panel help-card {{ $card['panel'] }} p-6">
                     <span class="surface-badge {{ $card['tone'] }}">{{ $card['title'] }}</span>
                     <p class="mt-5 text-base leading-7 text-[var(--muted)]">{{ $card['copy'] }}</p>
                 </article>
@@ -202,7 +204,7 @@
     </div>
 </section>
 
-<section id="updates" class="section-block border-y border-[var(--line)] bg-[var(--ivory)]/60">
+<section id="updates" class="section-block section-shell section-shell-updates">
     <div class="site-container">
         <span class="section-label">Evidencia y actualizaciones</span>
         <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
@@ -240,7 +242,7 @@
     </div>
 </section>
 
-<section id="trust" class="section-block">
+<section id="trust" class="section-block section-shell section-shell-trust">
     <div class="site-container">
         <span class="section-label">Transparencia y confianza</span>
         <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
