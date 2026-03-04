@@ -5,5 +5,5 @@
 @endphp
 
 <div class="{{ $wrapperClass }}">
-    <img src="{{ asset('branding/sleider-calderon-logo.svg') }}" alt="{{ $productName }}" class="{{ $logoClass }}">
+    <img src="{{ asset('branding/sleider-calderon-logo.png') }}" alt="{{ $productName }}" class="{{ $logoClass }}">
 </div>

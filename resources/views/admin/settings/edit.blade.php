@@ -35,7 +35,7 @@
         <section class="admin-card p-6">
             <p class="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--muted)]">Content blocks</p>
             <div class="mt-5 space-y-5">
-                @foreach ($contentBlocks as $block)
+                @foreach ($editableContentBlocks as $block)
                     <div class="rounded-[24px] border border-[var(--line)] bg-[var(--paper)] p-5">
                         <p class="text-sm font-semibold text-[var(--graphite)]">{{ $block->key }}</p>
                         <div class="mt-4 grid gap-4">

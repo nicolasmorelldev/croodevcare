@@ -15,7 +15,7 @@ class SettingController extends Controller
     {
         return view('admin.settings.edit', [
             'settings' => SiteSetting::grouped(),
-            'contentBlocks' => ContentBlock::query()->orderBy('sort_order')->get(),
+            'editableContentBlocks' => ContentBlock::query()->orderBy('sort_order')->get(),
         ]);
     }
 
