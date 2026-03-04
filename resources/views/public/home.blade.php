@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Croodev Care | '.$cause->title)
+@section('title', ($siteSettings['product_name'] ?? config('croodev.site.product_name')).' | Campaña solidaria')
 @section('meta_description', $cause->beneficiary_summary)
 
 @section('content')

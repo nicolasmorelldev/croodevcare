@@ -3,7 +3,7 @@
 @section('page_title', 'Medios de aporte')
 @section('content')
     <div class="flex items-center justify-between gap-4">
-        <p class="text-sm leading-7 text-[var(--muted)]">Gestioná los providers visibles en la demo y el orden de prioridad para la conversión.</p>
+        <p class="text-sm leading-7 text-[var(--muted)]">Gestioná los medios visibles en campaña y el orden de prioridad para la conversión.</p>
         <a href="{{ route('admin.methods.create') }}" class="btn-primary">Nuevo medio</a>
     </div>
     <div class="admin-card overflow-hidden">

@@ -45,10 +45,10 @@ class DemoContentSeeder extends Seeder
         Cause::query()->delete();
 
         $admin = User::query()->updateOrCreate(
-            ['email' => 'admin@croodevcare.test'],
+            ['email' => 'admin@sleidercalderon.test'],
             [
-                'name' => 'Croodev Demo Admin',
-                'password' => 'CroodevDemo!2026',
+                'name' => 'Sleider Demo Admin',
+                'password' => 'SleiderDemo!2026',
                 'role' => UserRole::SuperAdmin,
                 'is_active' => true,
                 'email_verified_at' => now(),
@@ -56,36 +56,36 @@ class DemoContentSeeder extends Seeder
         );
 
         $cause = Cause::query()->create([
-            'title' => 'Volver a Casa',
-            'slug' => 'volver-a-casa',
-            'beneficiary_name' => 'Familia Rojas',
-            'beneficiary_summary' => 'Una familia necesita adaptar su vivienda y sostener el tratamiento de rehabilitación de su hijo luego de un accidente vial.',
+            'title' => 'Sleider Calderón',
+            'slug' => 'sleider-calderon',
+            'beneficiary_name' => 'Sleider Calderón',
+            'beneficiary_summary' => 'Sleider atraviesa una recuperación compleja después de un accidente vial. La campaña busca sostener terapias, movilidad diaria y adecuaciones básicas del hogar para que no interrumpa su proceso.',
             'status' => CauseStatus::Active,
             'location' => 'San Luis, Argentina',
             'goal_amount' => 18500000,
             'raised_amount' => 7425000,
             'featured' => true,
             'hero_badge' => 'Causa activa',
-            'hero_heading' => 'Una casa accesible para volver a empezar',
-            'hero_excerpt' => 'Mateo tiene 9 años y atraviesa una rehabilitación intensa. La familia necesita adaptar el hogar, cubrir traslados y sostener estudios médicos clave durante los próximos meses.',
-            'short_story' => 'Después de un accidente vial, la rutina de la familia cambió por completo. Hoy el foco está en que Mateo pueda volver a su casa con movilidad segura, continuidad médica y estabilidad básica.',
+            'hero_heading' => 'Una recuperación sostenida y un hogar seguro para Sleider',
+            'hero_excerpt' => 'Cada aporte ayuda a cubrir traslados, sesiones de rehabilitación, medicamentos y adecuaciones básicas para que Sleider continúe su recuperación con estabilidad y sin interrupciones.',
+            'short_story' => 'Después de un accidente de tránsito, la rutina de Sleider y de su familia cambió por completo. Hoy la prioridad es sostener su rehabilitación y preparar la casa para una nueva etapa de autonomía.',
             'full_story' => implode("\n\n", [
-                'En octubre, Mateo sufrió un accidente que cambió por completo el día a día de su familia.',
-                'Desde entonces, la prioridad fue estabilizar su salud y comenzar un proceso de rehabilitación exigente, con traslados frecuentes, controles médicos y nuevas necesidades dentro del hogar.',
-                'La vivienda actual no está preparada para su movilidad. Hace falta adaptar accesos, reorganizar un espacio de descanso seguro y cubrir gastos que aparecieron de forma repentina: estudios médicos, medicación, insumos, alimentos y movilidad.',
-                'La campaña Volver a Casa busca dar una respuesta concreta y transparente. Cada necesidad visible en la plataforma tiene seguimiento, estado y actualización pública.',
-                'El objetivo no es solo reunir fondos, sino dar previsibilidad a una familia que necesita enfocarse en la recuperación de su hijo.',
+                'Sleider sufrió un accidente vial que obligó a reorganizar por completo su rutina, su tratamiento y la dinámica diaria de toda su familia.',
+                'Desde entonces, el foco está puesto en sostener una rehabilitación exigente, con controles médicos, medicación, movilidad frecuente y asistencia para tareas básicas.',
+                'La vivienda todavía necesita ajustes concretos para que pueda moverse con mayor seguridad y descanso: accesos, circulación, apoyos y un espacio funcional para su recuperación.',
+                'Esta campaña reúne esas necesidades en un solo lugar, con seguimiento visible, actualizaciones públicas y un enfoque claro en la transparencia.',
+                'El objetivo es que Sleider pueda concentrarse en recuperar estabilidad, autonomía y calidad de vida sin que la familia cargue sola con todo el costo del proceso.',
             ]),
-            'impact_statement' => 'Cada aporte acelera el regreso seguro al hogar y sostiene la rehabilitación de Mateo.',
+            'impact_statement' => 'Cada aporte acerca a Sleider a una recuperación más estable, segura y autónoma.',
             'primary_cta_label' => 'Ayudar ahora',
             'secondary_cta_label' => 'Conocer la historia',
-            'manager_name' => 'Equipo Croodev Care',
-            'manager_role' => 'Administración de campaña',
-            'manager_contact_email' => 'transparencia@croodevcare.test',
+            'manager_name' => 'Comité solidario de Sleider',
+            'manager_role' => 'Coordinación y seguimiento de la campaña',
+            'manager_contact_email' => 'transparencia@sleidercalderon.test',
             'manager_contact_phone' => '+54 11 5555 0192',
-            'donation_disclaimer' => 'Las contribuciones visibles en esta demo son simuladas. La arquitectura está preparada para integrarse con medios de pago reales.',
-            'hero_image_path' => 'demo/causes/volver-a-casa/hero.svg',
-            'hero_image_alt' => 'La familia Rojas en el patio de su casa',
+            'donation_disclaimer' => 'En esta demo el aporte se registra con un gateway de prueba. Las fotos utilizadas son referenciales y el sistema está preparado para integrarse con pagos reales.',
+            'hero_image_path' => 'demo/causes/sleider-calderon/hero.jpg',
+            'hero_image_alt' => 'Joven en silla de ruedas durante una jornada de recuperación',
             'published_at' => now()->subDays(20),
             'last_update_at' => '2026-02-27 12:00:00',
         ]);
@@ -93,8 +93,8 @@ class DemoContentSeeder extends Seeder
         foreach ([
             ['amount' => 2000, 'label' => '$2.000', 'impact_copy' => 'Ayudás con medicación de apoyo', 'sort_order' => 1],
             ['amount' => 5000, 'label' => '$5.000', 'impact_copy' => 'Cubrís parte de un traslado', 'sort_order' => 2],
-            ['amount' => 10000, 'label' => '$10.000', 'impact_copy' => 'Aportás a insumos semanales', 'sort_order' => 3],
-            ['amount' => 20000, 'label' => '$20.000', 'impact_copy' => 'Impulsás una adaptación concreta del hogar', 'sort_order' => 4],
+            ['amount' => 10000, 'label' => '$10.000', 'impact_copy' => 'Aportás a una sesión intensiva de rehabilitación', 'sort_order' => 3],
+            ['amount' => 20000, 'label' => '$20.000', 'impact_copy' => 'Impulsás una adecuación concreta del hogar', 'sort_order' => 4],
         ] as $preset) {
             DonationAmountPreset::query()->create([
                 'cause_id' => $cause->id,
@@ -104,11 +104,11 @@ class DemoContentSeeder extends Seeder
         }
 
         foreach ([
-            ['category' => NeedCategory::MedicalStudies, 'title' => 'Estudios de control', 'description' => 'Resonancias, controles traumatológicos y evaluaciones funcionales.', 'estimated_amount' => 3200000, 'covered_amount' => 1250000, 'status' => NeedStatus::PartiallyCovered, 'urgent' => true, 'sort_order' => 1],
-            ['category' => NeedCategory::Transport, 'title' => 'Traslados a rehabilitación', 'description' => 'Movilidad ida y vuelta tres veces por semana durante cuatro meses.', 'estimated_amount' => 2800000, 'covered_amount' => 980000, 'status' => NeedStatus::PartiallyCovered, 'urgent' => true, 'sort_order' => 2],
-            ['category' => NeedCategory::HomeAdaptation, 'title' => 'Adaptación del hogar', 'description' => 'Rampas, apoyos, redistribución del cuarto y accesibilidad básica.', 'estimated_amount' => 6400000, 'covered_amount' => 2200000, 'status' => NeedStatus::PartiallyCovered, 'urgent' => true, 'sort_order' => 3],
-            ['category' => NeedCategory::Food, 'title' => 'Alimentos y soporte cotidiano', 'description' => 'Acompañamiento mensual para sostener la organización familiar.', 'estimated_amount' => 1600000, 'covered_amount' => 1600000, 'status' => NeedStatus::Completed, 'urgent' => false, 'sort_order' => 4],
-            ['category' => NeedCategory::Rent, 'title' => 'Mes de alquiler puente', 'description' => 'Respiro financiero para enfocar recursos en la recuperación.', 'estimated_amount' => 4500000, 'covered_amount' => 1035000, 'status' => NeedStatus::PartiallyCovered, 'urgent' => false, 'sort_order' => 5],
+            ['category' => NeedCategory::MedicalStudies, 'title' => 'Controles y estudios médicos', 'description' => 'Evaluaciones funcionales, imágenes y seguimiento clínico para sostener la rehabilitación.', 'estimated_amount' => 3200000, 'covered_amount' => 1250000, 'status' => NeedStatus::PartiallyCovered, 'urgent' => true, 'sort_order' => 1],
+            ['category' => NeedCategory::Transport, 'title' => 'Traslados a terapia', 'description' => 'Movilidad ida y vuelta varias veces por semana para controles y sesiones de rehabilitación.', 'estimated_amount' => 2800000, 'covered_amount' => 980000, 'status' => NeedStatus::PartiallyCovered, 'urgent' => true, 'sort_order' => 2],
+            ['category' => NeedCategory::HomeAdaptation, 'title' => 'Adecuación del hogar', 'description' => 'Accesos, apoyos, circulación segura y un espacio de descanso preparado para su nueva rutina.', 'estimated_amount' => 6400000, 'covered_amount' => 2200000, 'status' => NeedStatus::PartiallyCovered, 'urgent' => true, 'sort_order' => 3],
+            ['category' => NeedCategory::Food, 'title' => 'Alimentos y soporte diario', 'description' => 'Cobertura básica para que la familia pueda enfocarse en el tratamiento y la recuperación.', 'estimated_amount' => 1600000, 'covered_amount' => 1600000, 'status' => NeedStatus::Completed, 'urgent' => false, 'sort_order' => 4],
+            ['category' => NeedCategory::Rent, 'title' => 'Respiro financiero mensual', 'description' => 'Apoyo temporal para sostener gastos fijos mientras la familia reorganiza ingresos y cuidados.', 'estimated_amount' => 4500000, 'covered_amount' => 1035000, 'status' => NeedStatus::PartiallyCovered, 'urgent' => false, 'sort_order' => 5],
         ] as $need) {
             NeedItem::query()->create([
                 'cause_id' => $cause->id,
@@ -117,9 +117,9 @@ class DemoContentSeeder extends Seeder
         }
 
         foreach ([
-            ['title' => 'Mateo comenzó una nueva etapa de rehabilitación', 'type' => CauseUpdateType::Medical, 'published_at' => '2026-02-12 10:00:00', 'excerpt' => 'Se confirmó un nuevo plan de trabajo físico y ocupacional para las próximas ocho semanas.', 'content' => 'El equipo médico ajustó la frecuencia de las sesiones y recomendó sostener los traslados tres veces por semana. Esto vuelve aún más importante asegurar movilidad y continuidad.', 'image_path' => 'demo/causes/volver-a-casa/update-1.svg'],
-            ['title' => 'La familia ya inició la adaptación del dormitorio', 'type' => CauseUpdateType::Progress, 'published_at' => '2026-02-21 16:30:00', 'excerpt' => 'Se liberó espacio para circulación y se definieron cambios mínimos de seguridad.', 'content' => 'Con el primer tramo reunido se comenzó a reorganizar el dormitorio para mejorar el acceso, el descanso y la seguridad diaria.', 'image_path' => 'demo/causes/volver-a-casa/update-2.svg'],
-            ['title' => 'Se cubrió por completo el primer bloque de alimentos', 'type' => CauseUpdateType::Milestone, 'published_at' => '2026-02-27 12:00:00', 'excerpt' => 'Una necesidad clave ya figura como completada dentro de la campaña.', 'content' => 'Gracias a los aportes recibidos se cubrió el primer bloque de alimentos y soporte básico, permitiendo concentrar el próximo objetivo en movilidad y adaptación del hogar.', 'image_path' => 'demo/causes/volver-a-casa/update-3.svg'],
+            ['title' => 'Sleider inició una nueva etapa de rehabilitación', 'type' => CauseUpdateType::Medical, 'published_at' => '2026-02-12 10:00:00', 'excerpt' => 'El equipo médico definió un esquema más intensivo para las próximas semanas.', 'content' => 'Los profesionales recomendaron sostener la continuidad de las sesiones y evitar interrupciones en traslados, controles y apoyo cotidiano. Eso vuelve prioritario asegurar movilidad y previsibilidad.', 'image_path' => 'demo/causes/sleider-calderon/update-1.jpg'],
+            ['title' => 'Comenzó la adecuación del espacio de descanso', 'type' => CauseUpdateType::Progress, 'published_at' => '2026-02-21 16:30:00', 'excerpt' => 'Se reorganizó una parte del hogar para mejorar circulación y seguridad.', 'content' => 'Con el primer tramo cubierto se inició una adaptación básica del espacio donde Sleider pasa más horas, priorizando accesos, apoyo físico y una rutina diaria más segura.', 'image_path' => 'demo/causes/sleider-calderon/update-2.jpg'],
+            ['title' => 'Se completó el primer bloque de apoyo diario', 'type' => CauseUpdateType::Milestone, 'published_at' => '2026-02-27 12:00:00', 'excerpt' => 'Una necesidad importante ya figura como cubierta dentro de la campaña.', 'content' => 'Los aportes recibidos permitieron cubrir el primer bloque de alimentos y soporte esencial. El siguiente foco está puesto en la terapia continua y la adecuación del hogar.', 'image_path' => 'demo/causes/sleider-calderon/update-3.jpg'],
         ] as $update) {
             CauseUpdate::query()->create([
                 'cause_id' => $cause->id,
@@ -128,12 +128,12 @@ class DemoContentSeeder extends Seeder
         }
 
         foreach ([
-            ['path' => 'demo/causes/volver-a-casa/habitacion.svg', 'alt' => 'Habitación en proceso de adaptación', 'caption' => 'El cuarto necesita circulación segura y apoyo lateral.', 'featured' => true, 'sort_order' => 1],
-            ['path' => 'demo/causes/volver-a-casa/traslado.svg', 'alt' => 'Traslado a una sesión de rehabilitación', 'caption' => 'Cada semana implica varios viajes al centro médico.', 'featured' => true, 'sort_order' => 2],
-            ['path' => 'demo/causes/volver-a-casa/rehabilitacion.svg', 'alt' => 'Sesión de rehabilitación física', 'caption' => 'La continuidad del tratamiento es una prioridad.', 'featured' => false, 'sort_order' => 3],
-            ['path' => 'demo/causes/volver-a-casa/gallery-1.svg', 'alt' => 'Entrada principal de la vivienda', 'caption' => 'La entrada actual requiere una solución de acceso segura.', 'featured' => true, 'sort_order' => 4],
-            ['path' => 'demo/causes/volver-a-casa/gallery-2.svg', 'alt' => 'Materiales para una adaptación básica', 'caption' => 'Se priorizan cambios simples pero de alto impacto.', 'featured' => true, 'sort_order' => 5],
-            ['path' => 'demo/causes/volver-a-casa/gallery-3.svg', 'alt' => 'Jornada de rehabilitación', 'caption' => 'El tratamiento sostenido mejora autonomía y calidad de vida.', 'featured' => false, 'sort_order' => 6],
+            ['path' => 'demo/causes/sleider-calderon/story-1.jpg', 'alt' => 'Sleider en un entorno interior durante su recuperación', 'caption' => 'La campaña también busca adaptar su espacio cotidiano para que pueda moverse con seguridad.', 'featured' => true, 'sort_order' => 1],
+            ['path' => 'demo/causes/sleider-calderon/story-2.jpg', 'alt' => 'Acompañamiento durante una jornada de movilidad asistida', 'caption' => 'Cada traslado y cada instancia de apoyo marcan una diferencia real en el proceso.', 'featured' => true, 'sort_order' => 2],
+            ['path' => 'demo/causes/sleider-calderon/story-3.jpg', 'alt' => 'Momento de seguimiento médico en el proceso de recuperación', 'caption' => 'La continuidad clínica requiere tiempo, organización y recursos sostenidos.', 'featured' => false, 'sort_order' => 3],
+            ['path' => 'demo/causes/sleider-calderon/gallery-1.jpg', 'alt' => 'Movilidad urbana en silla de ruedas', 'caption' => 'La campaña prioriza autonomía, seguridad y accesibilidad en cada traslado.', 'featured' => true, 'sort_order' => 4],
+            ['path' => 'demo/causes/sleider-calderon/gallery-2.jpg', 'alt' => 'Rutina diaria adaptada con apoyo tecnológico', 'caption' => 'Recuperarse también implica reorganizar tareas y hábitos dentro del hogar.', 'featured' => true, 'sort_order' => 5],
+            ['path' => 'demo/causes/sleider-calderon/gallery-3.jpg', 'alt' => 'Espacio doméstico accesible para una nueva etapa', 'caption' => 'La meta es construir una rutina más estable, humana y sostenible para Sleider.', 'featured' => false, 'sort_order' => 6],
         ] as $image) {
             CauseImage::query()->create([
                 'cause_id' => $cause->id,
@@ -145,7 +145,7 @@ class DemoContentSeeder extends Seeder
             ['question' => '¿Quién administra esta campaña?', 'answer' => 'La campaña está administrada por un equipo verificado y cada actualización queda reflejada en el panel y en el sitio público.', 'sort_order' => 1],
             ['question' => '¿Cómo se muestra el uso de los fondos?', 'answer' => 'Las necesidades se publican con estado, monto estimado y cobertura parcial o total. Las actualizaciones permiten seguir el avance de la causa.', 'sort_order' => 2],
             ['question' => '¿Puedo colaborar de otra forma además de donar?', 'answer' => 'Sí. La plataforma contempla difusión, alianzas, ayuda logística y contacto directo para colaboraciones específicas.', 'sort_order' => 3],
-            ['question' => '¿La demo usa pagos reales?', 'answer' => 'No. Esta demo utiliza un gateway fake para validar experiencia y arquitectura. El sistema está preparado para integrar Stripe, Mercado Pago o transferencia real.', 'sort_order' => 4],
+            ['question' => '¿La demo usa pagos reales y fotos del caso?', 'answer' => 'No. Esta demo usa un gateway fake y fotografías de referencia con licencia abierta para validar experiencia, contenido y arquitectura antes de una integración productiva.', 'sort_order' => 4],
         ] as $faq) {
             Faq::query()->create([
                 'cause_id' => $cause->id,
@@ -155,8 +155,8 @@ class DemoContentSeeder extends Seeder
         }
 
         foreach ([
-            ['author' => 'Luciana R.', 'role' => 'Tía de Mateo', 'message' => 'La claridad con la que se muestra cada avance nos ayuda a pedir apoyo con respeto y sin confusión.', 'sort_order' => 1],
-            ['author' => 'Martín S.', 'role' => 'Kinesiólogo', 'message' => 'Sostener el tratamiento sin interrupciones hace una diferencia real. Poder comunicar eso con transparencia es clave.', 'sort_order' => 2],
+            ['author' => 'Mariela C.', 'role' => 'Familiar cercana', 'message' => 'Tener cada necesidad ordenada y visible nos ayuda a pedir apoyo con claridad y sin perder de vista lo urgente.', 'sort_order' => 1],
+            ['author' => 'Julián P.', 'role' => 'Equipo terapéutico', 'message' => 'La recuperación depende mucho de la continuidad. Poder mostrar avances y prioridades de forma transparente cambia la conversación.', 'sort_order' => 2],
         ] as $testimonial) {
             Testimonial::query()->create([
                 'cause_id' => $cause->id,
@@ -178,21 +178,21 @@ class DemoContentSeeder extends Seeder
         DonationMethod::query()->create([
             'type' => DonationMethodType::BankTransfer,
             'title' => 'Transferencia / Alias',
-            'description' => 'croodev.care.demo',
+            'description' => 'sleider.calderon.demo',
             'enabled' => true,
             'is_primary' => false,
             'sort_order' => 2,
-            'configuration' => ['alias' => 'croodev.care.demo'],
+            'configuration' => ['alias' => 'sleider.calderon.demo'],
         ]);
 
         DonationMethod::query()->create([
             'type' => DonationMethodType::Contact,
             'title' => 'Alianzas y ayuda directa',
-            'description' => 'contacto@croodevcare.test',
+            'description' => 'contacto@sleidercalderon.test',
             'enabled' => true,
             'is_primary' => false,
             'sort_order' => 3,
-            'configuration' => ['email' => 'contacto@croodevcare.test'],
+            'configuration' => ['email' => 'contacto@sleidercalderon.test'],
         ]);
 
         foreach ([
@@ -220,16 +220,16 @@ class DemoContentSeeder extends Seeder
         }
 
         foreach ([
-            ['group' => 'site', 'key' => 'product_name', 'label' => 'Nombre del producto', 'type' => SettingType::Text, 'value' => 'Croodev Care', 'sort_order' => 1],
-            ['group' => 'site', 'key' => 'product_tagline', 'label' => 'Tagline', 'type' => SettingType::Text, 'value' => 'Ayuda clara para causas que importan', 'sort_order' => 2],
-            ['group' => 'site', 'key' => 'concept_by_label', 'label' => 'Concept label', 'type' => SettingType::Text, 'value' => 'Concept by Croodev', 'sort_order' => 3],
-            ['group' => 'contact', 'key' => 'support_email', 'label' => 'Email de soporte', 'type' => SettingType::Email, 'value' => 'hola@croodevcare.test', 'sort_order' => 1],
+            ['group' => 'site', 'key' => 'product_name', 'label' => 'Nombre del producto', 'type' => SettingType::Text, 'value' => 'Sleider Calderón', 'sort_order' => 1],
+            ['group' => 'site', 'key' => 'product_tagline', 'label' => 'Tagline', 'type' => SettingType::Text, 'value' => 'Campaña solidaria para su recuperación', 'sort_order' => 2],
+            ['group' => 'site', 'key' => 'concept_by_label', 'label' => 'Concept label', 'type' => SettingType::Text, 'value' => 'Concepto por', 'sort_order' => 3],
+            ['group' => 'contact', 'key' => 'support_email', 'label' => 'Email de soporte', 'type' => SettingType::Email, 'value' => 'contacto@sleidercalderon.test', 'sort_order' => 1],
             ['group' => 'contact', 'key' => 'support_phone', 'label' => 'Teléfono', 'type' => SettingType::Phone, 'value' => '+54 11 5555 0192', 'sort_order' => 2],
             ['group' => 'contact', 'key' => 'whatsapp', 'label' => 'WhatsApp', 'type' => SettingType::Phone, 'value' => '+54 9 11 5555 0192', 'sort_order' => 3],
             ['group' => 'social', 'key' => 'instagram_url', 'label' => 'Instagram', 'type' => SettingType::Url, 'value' => 'https://instagram.com/croodev', 'sort_order' => 1],
             ['group' => 'social', 'key' => 'linkedin_url', 'label' => 'LinkedIn', 'type' => SettingType::Url, 'value' => 'https://linkedin.com/company/croodev', 'sort_order' => 2],
             ['group' => 'legal', 'key' => 'transparency_notice', 'label' => 'Aviso de transparencia', 'type' => SettingType::Textarea, 'value' => 'La campaña es administrada por un equipo verificado. Cada aporte se asigna a necesidades visibles y el avance se actualiza desde el panel.', 'sort_order' => 1],
-            ['group' => 'legal', 'key' => 'legal_notice', 'label' => 'Aviso legal', 'type' => SettingType::Textarea, 'value' => 'Demo funcional con fines comerciales y de validación de producto. Los medios de pago activos en este entorno son simulados.', 'sort_order' => 2],
+            ['group' => 'legal', 'key' => 'legal_notice', 'label' => 'Aviso legal', 'type' => SettingType::Textarea, 'value' => 'Demo funcional con fines comerciales y de validación de producto. Los medios de pago son simulados y las fotografías corresponden a referencias visuales con licencia abierta.', 'sort_order' => 2],
         ] as $setting) {
             SiteSetting::query()->create($setting);
         }
@@ -237,7 +237,7 @@ class DemoContentSeeder extends Seeder
         foreach ([
             ['page' => 'home', 'key' => 'how_to_help_intro', 'title' => 'Cómo ayudar', 'summary' => 'Hay distintas maneras de acompañar.', 'content' => 'Hay distintas maneras de acompañar. Algunas resuelven urgencias inmediatas y otras sostienen el proceso completo.', 'sort_order' => 1],
             ['page' => 'home', 'key' => 'transparency_intro', 'title' => 'Transparencia', 'summary' => 'Toda campaña necesita claridad operativa.', 'content' => 'Toda campaña necesita claridad operativa. Acá se muestra qué se necesita, cuánto se cubrió y cómo evoluciona la causa.', 'sort_order' => 2],
-            ['page' => 'global', 'key' => 'footer_blurb', 'title' => 'Footer', 'summary' => 'Demo comercial', 'content' => 'Croodev Care es una demo de producto para causas solidarias con identidad clara, experiencia cuidada y administración real.', 'sort_order' => 3],
+            ['page' => 'global', 'key' => 'footer_blurb', 'title' => 'Footer', 'summary' => 'Campaña solidaria', 'content' => 'Una campaña pensada para ordenar prioridades, mostrar avances reales y facilitar ayuda inmediata con una experiencia clara y humana.', 'sort_order' => 3],
         ] as $block) {
             ContentBlock::query()->create($block);
         }

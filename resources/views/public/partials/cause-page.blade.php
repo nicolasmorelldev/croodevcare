@@ -213,6 +213,9 @@
                 <div class="mt-8 space-y-5">
                     @foreach ($cause->updates as $update)
                         <article class="card-panel p-6">
+                            @if ($update->image_path)
+                                <img src="{{ asset($update->image_path) }}" alt="{{ $update->title }}" class="mb-5 h-52 w-full rounded-[24px] object-cover">
+                            @endif
                             <div class="flex items-center justify-between gap-4">
                                 <span class="surface-badge surface-badge-info">{{ ucfirst(str_replace('_', ' ', $update->type->value)) }}</span>
                                 <span class="text-xs uppercase tracking-[0.2em] text-[var(--muted)]">{{ optional($update->published_at)->format('d M Y') }}</span>

@@ -3,17 +3,15 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>@yield('title', ($siteSettings['product_name'] ?? config('croodev.site.product_name')).' | Croodev')</title>
+        <title>@yield('title', $siteSettings['product_name'] ?? config('croodev.site.product_name'))</title>
         <meta name="description" content="@yield('meta_description', $siteSettings['product_tagline'] ?? config('croodev.site.product_tagline'))">
         <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=manrope:400,500,600,700,800|cormorant-garamond:500,600,700" rel="stylesheet" />
+        <link href="https://fonts.bunny.net/css?family=manrope:400,500,600,700,800|cormorant-garamond:500,600,700|great-vibes:400" rel="stylesheet" />
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body>
         @php
             $productName = $siteSettings['product_name'] ?? config('croodev.site.product_name');
-            $subBrand = str($productName)->replace('Croodev', '')->trim()->value() ?: 'Care';
-            $isHome = request()->routeIs('home');
             $currentPath = request()->routeIs('causes.show') ? route('causes.show', request()->route('cause')) : route('home');
             $navLinks = [
                 ['label' => 'Historia', 'href' => $currentPath.'#story'],
@@ -26,12 +24,13 @@
         <header class="sticky top-0 z-50 border-b border-[var(--line)] bg-[color:rgba(255,253,252,0.88)] backdrop-blur-xl">
             <div class="site-container">
                 <div class="flex items-center justify-between gap-4 py-4">
-                    <a href="{{ route('home') }}" class="flex items-center gap-4">
-                        <img src="{{ asset('branding/croodev-logo.svg') }}" alt="Croodev" class="h-10 w-auto">
-                        <div class="flex items-baseline gap-2">
-                            <span class="text-lg font-semibold tracking-[-0.03em] text-[var(--ink)]">Croodev</span>
-                            <span class="font-[var(--font-display)] text-2xl tracking-[0.08em] text-[var(--forest)]">{{ $subBrand }}</span>
-                        </div>
+                    <a href="{{ route('home') }}" class="min-w-0">
+                        @include('partials.campaign-lockup', [
+                            'productName' => $productName,
+                            'tagline' => 'Campaña solidaria',
+                            'iconClass' => 'campaign-mark h-12 sm:h-14',
+                            'nameClass' => 'campaign-wordmark text-[2.4rem] sm:text-[3rem]',
+                        ])
                     </a>
 
                     <nav class="hidden items-center gap-6 lg:flex">
@@ -76,15 +75,14 @@
         <footer class="border-t border-[var(--line)] bg-[var(--ivory)]">
             <div class="site-container grid gap-10 py-12 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.9fr]">
                 <div class="space-y-4">
-                    <div class="flex items-center gap-4">
-                        <img src="{{ asset('branding/croodev-logo.svg') }}" alt="Croodev" class="h-10 w-auto">
-                        <div class="flex items-baseline gap-2">
-                            <span class="text-lg font-semibold tracking-[-0.03em]">Croodev</span>
-                            <span class="font-[var(--font-display)] text-2xl tracking-[0.08em] text-[var(--forest)]">{{ $subBrand }}</span>
-                        </div>
-                    </div>
+                    @include('partials.campaign-lockup', [
+                        'productName' => $productName,
+                        'tagline' => 'Recuperación, transparencia y apoyo directo',
+                        'iconClass' => 'campaign-mark h-14',
+                        'nameClass' => 'campaign-wordmark text-[2.8rem]',
+                    ])
                     <p class="max-w-md text-sm leading-7 text-[var(--muted)]">
-                        {{ $contentBlocks['footer_blurb'] ?? 'Croodev Care es una demo de producto para causas solidarias con identidad clara, experiencia cuidada y administración real.' }}
+                        {{ $contentBlocks['footer_blurb'] ?? 'Campaña digital pensada para centralizar avances, necesidades concretas y aportes de forma clara, humana y confiable.' }}
                     </p>
                 </div>
 
@@ -113,7 +111,7 @@
                     </p>
                     <div class="pt-4">
                         <p class="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
-                            {{ $siteSettings['concept_label'] ?? config('croodev.site.concept_label') }}
+                            {{ $siteSettings['concept_by_label'] ?? config('croodev.site.concept_label') }}
                         </p>
                         <img src="{{ asset('branding/croodev-logo.svg') }}" alt="Croodev" class="h-8 w-auto">
                     </div>

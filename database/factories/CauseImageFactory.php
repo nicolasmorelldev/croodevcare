@@ -14,7 +14,7 @@ class CauseImageFactory extends Factory
     {
         return [
             'cause_id' => Cause::factory(),
-            'path' => 'demo/placeholders/gallery.svg',
+            'path' => 'demo/causes/sleider-calderon/gallery-1.jpg',
             'alt' => fake()->sentence(5),
             'caption' => fake()->sentence(),
             'featured' => false,

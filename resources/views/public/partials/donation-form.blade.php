@@ -4,10 +4,10 @@
 
 <div class="card-panel overflow-hidden" data-donation-widget>
     <div class="border-b border-[var(--line)] bg-[var(--ivory)] px-6 py-5">
-        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--muted)]">Aporte demo</p>
-        <h3 class="mt-2 text-3xl" style="font-family: var(--font-display);">Colaborar en segundos</h3>
+        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--muted)]">Aporte rápido</p>
+        <h3 class="mt-2 text-3xl" style="font-family: var(--font-display);">Aportar ahora</h3>
         <p class="mt-2 text-sm leading-7 text-[var(--muted)]">
-            Elegí un monto sugerido o ingresá otro valor. Esta demo utiliza un gateway fake para mostrar la experiencia completa.
+            Elegí un monto sugerido o ingresá otro valor. En esta demo el cobro es simulado, pero el flujo operativo ya está resuelto.
         </p>
     </div>
 
@@ -83,7 +83,7 @@
             <textarea id="message" name="message" class="textarea-field">{{ old('message') }}</textarea>
         </div>
 
-        <button type="submit" class="btn-primary w-full">Registrar aporte demo</button>
+        <button type="submit" class="btn-primary w-full">Registrar aporte</button>
 
         <p class="text-xs leading-6 text-[var(--muted)]">
             {{ $cause->donation_disclaimer }}

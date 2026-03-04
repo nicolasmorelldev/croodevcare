@@ -3,25 +3,34 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Admin Login | Croodev Care</title>
+        <title>Admin Login | {{ $siteSettings['product_name'] ?? config('croodev.site.product_name') }}</title>
         <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=manrope:400,500,600,700,800|cormorant-garamond:500,600,700" rel="stylesheet" />
+        <link href="https://fonts.bunny.net/css?family=manrope:400,500,600,700,800|cormorant-garamond:500,600,700|great-vibes:400" rel="stylesheet" />
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="flex min-h-screen items-center justify-center bg-[var(--ivory)] px-4 py-10">
         <div class="grid w-full max-w-[1080px] gap-8 lg:grid-cols-[0.95fr_1.05fr]">
             <section class="card-panel overflow-hidden">
-                <div class="h-full bg-[linear-gradient(135deg,rgba(40,84,70,0.96),rgba(23,56,47,0.92))] p-8 text-white lg:p-12">
-                    <img src="{{ asset('branding/croodev-logo.svg') }}" alt="Croodev" class="h-12 w-auto brightness-0 invert">
-                    <p class="mt-8 text-xs font-semibold uppercase tracking-[0.24em] text-white/70">Croodev Care</p>
+                <div class="h-full bg-[linear-gradient(135deg,rgba(29,94,184,0.98),rgba(217,31,53,0.92))] p-8 text-white lg:p-12">
+                    @include('partials.campaign-lockup', [
+                        'tagline' => 'Acceso administrativo',
+                        'wrapperClass' => 'campaign-lockup items-center',
+                        'iconClass' => 'campaign-mark h-14',
+                        'nameClass' => 'campaign-wordmark text-[3.15rem] text-white',
+                        'taglineClass' => 'campaign-tagline text-white/75',
+                    ])
                     <h1 class="mt-4 text-5xl leading-none" style="font-family: var(--font-display);">Panel de administración</h1>
                     <p class="mt-6 max-w-md text-base leading-8 text-white/78">
-                        Gestioná causas, necesidades, actualizaciones, montos sugeridos y toda la capa de confianza desde un panel coherente con el producto.
+                        Gestioná avances, necesidades, galería, aportes y mensajes de apoyo desde un panel consistente con la campaña.
                     </p>
                     <div class="mt-10 rounded-[28px] border border-white/14 bg-white/10 p-6">
-                        <p class="text-sm font-semibold">Credenciales demo</p>
-                        <p class="mt-3 text-sm text-white/75">admin@croodevcare.test</p>
-                        <p class="text-sm text-white/75">CroodevDemo!2026</p>
+                        <p class="text-sm font-semibold">Credenciales de prueba</p>
+                        <p class="mt-3 text-sm text-white/75">admin@sleidercalderon.test</p>
+                        <p class="text-sm text-white/75">SleiderDemo!2026</p>
+                        <div class="mt-6 border-t border-white/15 pt-4">
+                            <p class="text-[11px] font-semibold uppercase tracking-[0.24em] text-white/65">Concepto por</p>
+                            <img src="{{ asset('branding/croodev-logo.svg') }}" alt="Croodev" class="mt-3 h-8 w-auto brightness-0 invert">
+                        </div>
                     </div>
                 </div>
             </section>
@@ -30,7 +39,7 @@
                 <p class="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--muted)]">Acceso seguro</p>
                 <h2 class="mt-4 text-4xl" style="font-family: var(--font-display);">Ingresar al admin</h2>
                 <p class="mt-4 text-sm leading-7 text-[var(--muted)]">
-                    Este acceso está preparado para una demo comercial local y un panel custom extensible a producción.
+                    Este acceso de prueba permite revisar la campaña, actualizar contenido y validar el flujo operativo completo.
                 </p>
 
                 @if ($errors->any())

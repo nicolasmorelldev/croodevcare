@@ -1,4 +1,4 @@
-# Croodev Care
+# Sleider Calderón
 
 Demo full-stack para una plataforma solidaria premium construida con Laravel 13, Blade, Tailwind CSS, Vite y un panel admin personalizado.
 
@@ -32,8 +32,8 @@ El proyecto está funcional de punta a punta:
 
 ## Credenciales demo
 
-- Email: `admin@croodevcare.test`
-- Password: `CroodevDemo!2026`
+- Email: `admin@sleidercalderon.test`
+- Password: `SleiderDemo!2026`
 
 ## Puesta en marcha local
 

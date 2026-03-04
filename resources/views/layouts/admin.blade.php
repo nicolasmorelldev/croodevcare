@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield('title', 'Admin | '.($siteSettings['product_name'] ?? config('croodev.site.product_name')))</title>
         <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=manrope:400,500,600,700,800|cormorant-garamond:500,600,700" rel="stylesheet" />
+        <link href="https://fonts.bunny.net/css?family=manrope:400,500,600,700,800|cormorant-garamond:500,600,700|great-vibes:400" rel="stylesheet" />
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="admin-shell">
@@ -28,12 +28,12 @@
 
         <div class="mx-auto grid min-h-screen max-w-[1560px] gap-6 px-4 py-4 lg:grid-cols-[280px_minmax(0,1fr)] lg:px-6">
             <aside class="rounded-[32px] border border-[var(--line)] bg-[var(--panel)]/85 p-6">
-                <a href="{{ route('home') }}" class="mb-8 flex items-center gap-4">
-                    <img src="{{ asset('branding/croodev-logo.svg') }}" alt="Croodev" class="h-10 w-auto">
-                    <div>
-                        <p class="text-sm font-semibold uppercase tracking-[0.24em] text-[var(--muted)]">Croodev Care</p>
-                        <p class="font-[var(--font-display)] text-2xl text-[var(--forest)]">Admin</p>
-                    </div>
+                <a href="{{ route('home') }}" class="mb-8 block">
+                    @include('partials.campaign-lockup', [
+                        'tagline' => 'Panel de campaña',
+                        'iconClass' => 'campaign-mark h-12',
+                        'nameClass' => 'campaign-wordmark text-[2.55rem]',
+                    ])
                 </a>
 
                 <nav class="space-y-2">
@@ -52,7 +52,7 @@
                 <header class="admin-card flex flex-col gap-4 px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                         <p class="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--muted)]">Panel operativo</p>
-                        <h1 class="admin-title">@yield('page_title', 'Croodev Care')</h1>
+                        <h1 class="admin-title">@yield('page_title', $siteSettings['product_name'] ?? config('croodev.site.product_name'))</h1>
                     </div>
                     <div class="flex items-center gap-4">
                         <div class="text-right text-sm text-[var(--muted)]">

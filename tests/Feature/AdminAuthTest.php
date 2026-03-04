@@ -16,11 +16,11 @@ class AdminAuthTest extends TestCase
         $this->seed(DemoContentSeeder::class);
 
         $response = $this->post(route('admin.login.store'), [
-            'email' => 'admin@croodevcare.test',
-            'password' => 'CroodevDemo!2026',
+            'email' => 'admin@sleidercalderon.test',
+            'password' => 'SleiderDemo!2026',
         ]);
 
         $response->assertRedirect(route('admin.dashboard'));
-        $this->assertAuthenticatedAs(User::query()->where('email', 'admin@croodevcare.test')->first());
+        $this->assertAuthenticatedAs(User::query()->where('email', 'admin@sleidercalderon.test')->first());
     }
 }

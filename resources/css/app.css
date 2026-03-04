@@ -8,29 +8,30 @@
 @theme {
     --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
     --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-brand: 'Great Vibes', 'Segoe Script', cursive;
 }
 
 :root {
-    --ink: #171717;
-    --graphite: #2b2f2d;
-    --paper: #fffdfc;
-    --ivory: #f6f1e8;
-    --panel: #f3eee6;
-    --panel-strong: #ece4d8;
-    --line: #ddd6ca;
-    --forest: #285446;
-    --forest-deep: #17382f;
-    --sage: #dde6de;
-    --clay: #c9825b;
-    --gold-mist: #e9d8b4;
-    --muted: #6d6a64;
-    --success: #2f6a51;
-    --warning: #b9853b;
-    --danger: #a94a3b;
-    --info: #4d6b7a;
-    --shadow-soft: 0 12px 30px rgba(23, 23, 23, 0.06);
-    --shadow-card: 0 18px 45px rgba(23, 23, 23, 0.08);
-    --shadow-float: 0 30px 70px rgba(23, 23, 23, 0.12);
+    --ink: #101628;
+    --graphite: #18233c;
+    --paper: #fbfcff;
+    --ivory: #eef4fb;
+    --panel: #f3f7fd;
+    --panel-strong: #d8e4f6;
+    --line: #d6dfef;
+    --forest: #1d5eb8;
+    --forest-deep: #143f7b;
+    --sage: #dce8fb;
+    --clay: #d91f35;
+    --gold-mist: #f8dde2;
+    --muted: #64738c;
+    --success: #246a57;
+    --warning: #b88125;
+    --danger: #c52f3b;
+    --info: #3f63a8;
+    --shadow-soft: 0 14px 34px rgba(16, 22, 40, 0.06);
+    --shadow-card: 0 24px 60px rgba(16, 22, 40, 0.09);
+    --shadow-float: 0 34px 88px rgba(16, 22, 40, 0.14);
 }
 
 @layer base {
@@ -41,8 +42,9 @@
     body {
         @apply min-h-screen bg-[var(--paper)] font-sans text-[var(--ink)] antialiased;
         background-image:
-            radial-gradient(circle at top right, rgba(233, 216, 180, 0.28), transparent 22rem),
-            radial-gradient(circle at top left, rgba(221, 230, 222, 0.34), transparent 24rem);
+            radial-gradient(circle at top right, rgba(217, 31, 53, 0.12), transparent 22rem),
+            radial-gradient(circle at top left, rgba(29, 94, 184, 0.18), transparent 24rem),
+            linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(238, 244, 251, 0.78));
     }
 
     h1,
@@ -53,7 +55,7 @@
     }
 
     ::selection {
-        background: rgba(40, 84, 70, 0.18);
+        background: rgba(29, 94, 184, 0.18);
     }
 
     a,
@@ -91,6 +93,23 @@
         @apply max-w-3xl text-base leading-8 text-[var(--muted)] md:text-lg;
     }
 
+    .campaign-lockup {
+        @apply flex items-center gap-4;
+    }
+
+    .campaign-mark {
+        @apply h-14 w-auto shrink-0 sm:h-16;
+    }
+
+    .campaign-wordmark {
+        @apply text-[2.75rem] leading-none text-[var(--ink)] sm:text-[3.4rem];
+        font-family: var(--font-brand);
+    }
+
+    .campaign-tagline {
+        @apply mt-1 text-[10px] font-semibold uppercase tracking-[0.3em] text-[var(--muted)] sm:text-[11px];
+    }
+
     .card-panel {
         @apply rounded-[28px] border border-[var(--line)] bg-white/90 backdrop-blur-sm;
         box-shadow: var(--shadow-card);
@@ -119,7 +138,7 @@
     }
 
     .btn-secondary {
-        @apply inline-flex items-center justify-center rounded-full border border-[var(--line)] bg-white px-6 py-3 text-sm font-semibold text-[var(--ink)] hover:border-[var(--forest)] hover:text-[var(--forest)];
+        @apply inline-flex items-center justify-center rounded-full border border-[var(--line)] bg-white px-6 py-3 text-sm font-semibold text-[var(--ink)] hover:border-[var(--clay)] hover:text-[var(--clay)];
     }
 
     .btn-ghost {
@@ -135,7 +154,7 @@
     }
 
     .progress-bar {
-        @apply h-full rounded-full bg-[linear-gradient(90deg,var(--forest),#3a7b66)];
+        @apply h-full rounded-full bg-[linear-gradient(90deg,var(--forest),var(--clay))];
     }
 
     .story-prose p {

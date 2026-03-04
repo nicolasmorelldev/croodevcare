@@ -2,7 +2,7 @@
 
 ## Resumen ejecutivo
 
-`Croodev Care` quedó implementado como demo full-stack lista para demo comercial local y online.
+`Sleider Calderón` quedó implementado como demo full-stack lista para demo comercial local y online.
 
 ## Estado por fase
 

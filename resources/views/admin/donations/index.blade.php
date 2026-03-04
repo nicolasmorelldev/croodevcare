@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('title', 'Donaciones | Admin')
-@section('page_title', 'Donaciones demo')
+@section('page_title', 'Donaciones')
 @section('content')
     <div class="admin-card overflow-hidden">
         @if ($donations->isEmpty())

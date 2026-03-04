@@ -1,12 +1,12 @@
 @extends('layouts.admin')
 
-@section('title', 'Dashboard | Croodev Care')
+@section('title', 'Dashboard | '.($siteSettings['product_name'] ?? config('croodev.site.product_name')))
 @section('page_title', 'Dashboard')
 
 @section('content')
     <div class="grid gap-5 xl:grid-cols-5">
         <div class="admin-stat xl:col-span-1">
-            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--muted)]">Recaudado demo</p>
+            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--muted)]">Recaudado</p>
             <p class="mt-4 text-3xl font-semibold text-[var(--forest)]">{{ \App\Support\Money::ars($totalRaised) }}</p>
         </div>
         <div class="admin-stat xl:col-span-1">
@@ -22,7 +22,7 @@
             <p class="mt-4 text-3xl font-semibold">{{ $urgentNeeds }}</p>
         </div>
         <div class="admin-stat xl:col-span-1">
-            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--muted)]">Inquiries</p>
+            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--muted)]">Colaboraciones</p>
             <p class="mt-4 text-3xl font-semibold">{{ $openInquiries }}</p>
         </div>
     </div>
